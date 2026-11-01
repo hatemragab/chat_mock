@@ -1,0 +1,107 @@
+{
+  "kind": "static-package-checks",
+  "tests": [
+    {
+      "name": "Prototype: offline resources, no network/persistence, valid embedded JSON and JavaScript",
+      "pass": true,
+      "detail": {
+        "bytes": 1614359,
+        "inlineScriptsSyntaxChecked": 2,
+        "embeddedJson": 5
+      }
+    },
+    {
+      "name": "Design system: offline resources, no network/persistence, valid embedded JSON and JavaScript",
+      "pass": true,
+      "detail": {
+        "bytes": 1125723,
+        "inlineScriptsSyntaxChecked": 1,
+        "embeddedJson": 2
+      }
+    },
+    {
+      "name": "Handoff viewer: offline resources and valid JavaScript",
+      "pass": true,
+      "detail": {
+        "bytes": 801525,
+        "inlineScriptsSyntaxChecked": 1,
+        "embeddedJson": 1
+      }
+    },
+    {
+      "name": "124 per-surface specifications",
+      "pass": true,
+      "detail": {
+        "surfaceSpecifications": 124
+      }
+    },
+    {
+      "name": "Surface coverage matrix",
+      "pass": true,
+      "detail": {
+        "rows": 124,
+        "columns": [
+          "id",
+          "type",
+          "feature",
+          "name",
+          "spec_file",
+          "source_registry",
+          "responsive_contract",
+          "responsive_implementation",
+          "visual_light",
+          "visual_dark",
+          "interaction_check",
+          "notes",
+          "browser_geometry",
+          "browser_geometry_modes"
+        ]
+      }
+    },
+    {
+      "name": "130 scenario matrix",
+      "pass": true,
+      "detail": {
+        "rows": 130,
+        "columns": [
+          "id",
+          "feature",
+          "surface",
+          "name",
+          "expectation",
+          "spec_file",
+          "scenario_registration",
+          "interaction_validation",
+          "notes"
+        ]
+      }
+    },
+    {
+      "name": "Valid assets and checksums",
+      "pass": true,
+      "detail": {
+        "validSvgAssets": 65,
+        "manifestFiles": 71
+      }
+    },
+    {
+      "name": "Core responsive tokens and capability contract",
+      "pass": true,
+      "detail": {
+        "rail": 76,
+        "list": 336,
+        "context": 320,
+        "componentSpecTopLevelKeys": [
+          "schema_version",
+          "project",
+          "deliverable",
+          "approved_direction",
+          "units",
+          "token_reference_convention",
+          "global_rules",
+          "components"
+        ]
+      }
+    }
+  ]
+}

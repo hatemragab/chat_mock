@@ -1,0 +1,2256 @@
+{
+  "rows": [
+    {
+      "feature": "Navigation",
+      "name": "Chats tab",
+      "details": "All, Unread, Contacts, Groups and Business filters; unread badges; new-chat action.",
+      "entry": "Bottom navigation",
+      "exit": "Conversation, search or recipient picker",
+      "basis": "Spec and supporting UX",
+      "id": "P01",
+      "type": "Tab"
+    },
+    {
+      "feature": "Navigation",
+      "name": "Calls tab",
+      "details": "Recent, missed and Business call filters; start a contact call.",
+      "entry": "Bottom navigation",
+      "exit": "Call details or recipient picker",
+      "basis": "Spec and supporting UX",
+      "id": "P02",
+      "type": "Tab"
+    },
+    {
+      "feature": "Navigation",
+      "name": "Status tab",
+      "details": "Your Status, rectangular previews, contact rings, seen updates and Discover preview.",
+      "entry": "Bottom navigation",
+      "exit": "Story viewer or publishing",
+      "basis": "Spec and supporting UX",
+      "id": "P03",
+      "type": "Tab"
+    },
+    {
+      "feature": "Navigation",
+      "name": "Discover tab",
+      "details": "Target-eligible Boosted, Sponsored and Popular Story cards; category browsing.",
+      "entry": "Bottom navigation",
+      "exit": "Story viewer, search or public Business profile",
+      "basis": "Spec and supporting UX",
+      "id": "P04",
+      "type": "Tab"
+    },
+    {
+      "feature": "Navigation",
+      "name": "Profile tab",
+      "details": "Personal identity, Business tools, publishing, Wallet, earnings and settings links.",
+      "entry": "Bottom navigation",
+      "exit": "Profile, publishing, Wallet or settings",
+      "basis": "Spec and supporting UX",
+      "id": "P05",
+      "type": "Tab"
+    },
+    {
+      "feature": "Onboarding",
+      "name": "Welcome / sign-in",
+      "details": "Google on Android; Apple on iOS; links to Terms and Privacy.",
+      "entry": "Launch / signed-out state",
+      "exit": "Complete profile",
+      "basis": "Spec and supporting UX",
+      "id": "P06",
+      "type": "Page"
+    },
+    {
+      "feature": "Onboarding",
+      "name": "Complete profile and phone",
+      "details": "Name/photo, gender, required phone and consent; phone is not OTP-gated.",
+      "entry": "First sign-in",
+      "exit": "Interest selection",
+      "basis": "Spec and supporting UX",
+      "id": "P07",
+      "type": "Page"
+    },
+    {
+      "feature": "Onboarding",
+      "name": "Interest selection",
+      "details": "At least three onboarding interests; edit existing interests; reusable single-interest targeting mode.",
+      "entry": "Onboarding / Profile / targeting",
+      "exit": "Contacts access or previous page",
+      "basis": "Spec and supporting UX",
+      "id": "P08",
+      "type": "Page"
+    },
+    {
+      "feature": "Onboarding",
+      "name": "Contacts access explanation",
+      "details": "Explain address-book matching; Allow or Not Now; permission handoff.",
+      "entry": "Onboarding / permissions recovery",
+      "exit": "Status or contact matching",
+      "basis": "Spec and supporting UX",
+      "id": "P09",
+      "type": "Page"
+    },
+    {
+      "feature": "Onboarding",
+      "name": "Terms of Service",
+      "details": "Readable legal text and return navigation.",
+      "entry": "Onboarding / About",
+      "exit": "Previous page",
+      "basis": "Spec and supporting UX",
+      "id": "P10",
+      "type": "Page"
+    },
+    {
+      "feature": "Onboarding",
+      "name": "Privacy Policy",
+      "details": "Readable privacy text and return navigation.",
+      "entry": "Onboarding / About",
+      "exit": "Previous page",
+      "basis": "Spec and supporting UX",
+      "id": "P11",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Contacts / recipient picker",
+      "details": "Single-select for direct chat/call; multiselect for create group, add members, forwarding and Story audience exceptions. Search and selected chips.",
+      "entry": "New Chat / Calls / Groups / forwarding / audience",
+      "exit": "Relevant conversation or confirmation step",
+      "basis": "Spec and supporting UX",
+      "id": "P12",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Chat and message search",
+      "details": "Global, direct, group or Business scope; results jump to the matching message.",
+      "entry": "Chats search / conversation menu",
+      "exit": "Matching conversation and message",
+      "basis": "Spec and supporting UX",
+      "id": "P13",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Direct conversation",
+      "details": "Text, media, documents, voice notes; reply/edit composer; reactions; receipts; audio/video actions.",
+      "entry": "Chats / recipient picker / notification",
+      "exit": "Chat info, media, message info or call",
+      "basis": "Spec and supporting UX",
+      "id": "P14",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Direct chat / contact info",
+      "details": "Privacy-permitted name/photo/phone, shared content, starred messages, mute, block/report and chat management.",
+      "entry": "Direct chat header / permitted Story viewer / group member",
+      "exit": "Shared pages, call or previous chat",
+      "basis": "Spec and supporting UX",
+      "id": "P15",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Shared media, files and links",
+      "details": "Segmented media/file/link browser; reused for direct, group and Business conversations.",
+      "entry": "Any conversation info",
+      "exit": "Media viewer, file preview or message",
+      "basis": "Spec and supporting UX",
+      "id": "P16",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Media viewer",
+      "details": "Full-screen photo/video/audio; playback, zoom and return to source.",
+      "entry": "Conversation / shared media",
+      "exit": "Source conversation or shared content",
+      "basis": "Spec and supporting UX",
+      "id": "P17",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Message details / receipts",
+      "details": "Direct sent/delivered/read times; group Read by and Delivered to participant lists.",
+      "entry": "Message actions",
+      "exit": "Conversation or permitted participant profile",
+      "basis": "Spec and supporting UX",
+      "id": "P18",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Archived chats",
+      "details": "Archived direct, group and Business conversations; open or unarchive.",
+      "entry": "Chats archived entry",
+      "exit": "Conversation or Chats",
+      "basis": "UX proposal",
+      "id": "P19",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Starred messages",
+      "details": "Global or conversation-specific saved messages; open original message or unstar.",
+      "entry": "Chats / conversation info",
+      "exit": "Original message",
+      "basis": "UX proposal",
+      "id": "P20",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "Add / edit contact",
+      "details": "Name and phone, validation, duplicate feedback and device-contact save handoff.",
+      "entry": "Recipient picker / contact info",
+      "exit": "Picker or contact info",
+      "basis": "UX proposal",
+      "id": "P21",
+      "type": "Page"
+    },
+    {
+      "feature": "Chats and contacts",
+      "name": "File preview",
+      "details": "File name/type/size; supported preview, download/open handoff and source-message link.",
+      "entry": "Message or shared files",
+      "exit": "Source conversation",
+      "basis": "UX proposal",
+      "id": "P22",
+      "type": "Page"
+    },
+    {
+      "feature": "Groups",
+      "name": "Group conversation",
+      "details": "Sender names, mentions, group system messages, reply/edit, media, reactions, receipts and permission-aware composer.",
+      "entry": "Chats / group creation / notification",
+      "exit": "Group info or shared chat tools",
+      "basis": "User addition; proposed group UX",
+      "id": "P23",
+      "type": "Page"
+    },
+    {
+      "feature": "Groups",
+      "name": "Create / edit group details",
+      "details": "Group name, photo and description. Initial and added members use the shared recipient picker.",
+      "entry": "New Chat / group info",
+      "exit": "New group or group info",
+      "basis": "User addition; proposed group UX",
+      "id": "P24",
+      "type": "Page"
+    },
+    {
+      "feature": "Groups",
+      "name": "Group info",
+      "details": "Identity, description, member preview, shared content, mute, permissions, add members and exit.",
+      "entry": "Group chat header",
+      "exit": "Members, permissions, edit details or shared content",
+      "basis": "User addition",
+      "id": "P25",
+      "type": "Page"
+    },
+    {
+      "feature": "Groups",
+      "name": "Group members",
+      "details": "Searchable members, owner/admin/member badges, role-aware actions and add-members entry; ownership-selection mode.",
+      "entry": "Group info",
+      "exit": "Member actions, contact info or shared picker",
+      "basis": "User addition; proposed role UX",
+      "id": "P26",
+      "type": "Page"
+    },
+    {
+      "feature": "Groups",
+      "name": "Group permissions",
+      "details": "Who can send messages, edit group info and manage membership; owner/admin/member variants.",
+      "entry": "Group info",
+      "exit": "Group info",
+      "basis": "User addition; proposed role UX",
+      "id": "P27",
+      "type": "Page"
+    },
+    {
+      "feature": "Calls",
+      "name": "Call details",
+      "details": "Participants, audio/video, direction, duration/result; originating Story and Credits for Business calls.",
+      "entry": "Calls history / promotion contact activity",
+      "exit": "Call again with relevant preflight or source chat",
+      "basis": "Spec and supporting UX",
+      "id": "P28",
+      "type": "Page"
+    },
+    {
+      "feature": "Calls",
+      "name": "Outgoing / ringing call",
+      "details": "Audio/video and personal/Business modes; recipient context; cancel. Business ringing has no charge.",
+      "entry": "Chat call action / recipient picker / Business preflight",
+      "exit": "Connected call or call summary",
+      "basis": "Spec and supporting UX",
+      "id": "P29",
+      "type": "Page"
+    },
+    {
+      "feature": "Calls",
+      "name": "Incoming call",
+      "details": "Personal or Business identity; audio/video mode; answer/decline; camera preview when relevant.",
+      "entry": "Incoming call event",
+      "exit": "Active call or previous screen",
+      "basis": "Spec and supporting UX",
+      "id": "P30",
+      "type": "Page"
+    },
+    {
+      "feature": "Calls",
+      "name": "Active audio call",
+      "details": "Time, mute, output, minimize and end; Business rate/balance panel for payer.",
+      "entry": "Answered call",
+      "exit": "Minimized overlay or call summary",
+      "basis": "Spec and supporting UX",
+      "id": "P31",
+      "type": "Page"
+    },
+    {
+      "feature": "Calls",
+      "name": "Active video call",
+      "details": "Remote video/self preview, camera toggle/switch, mute and end; Business billing context.",
+      "entry": "Answered video call",
+      "exit": "Minimized overlay or call summary",
+      "basis": "Spec and supporting UX",
+      "id": "P32",
+      "type": "Page"
+    },
+    {
+      "feature": "Calls",
+      "name": "Call summary",
+      "details": "Answered/unanswered/declined/busy/ended reason, duration and actual Business debit when applicable.",
+      "entry": "Call end",
+      "exit": "Chat, call history or originating Story",
+      "basis": "Spec and supporting UX",
+      "id": "P33",
+      "type": "Page"
+    },
+    {
+      "feature": "Stories and Discover",
+      "name": "Full-screen Story viewer",
+      "details": "Image/video/audio; own/contact/Business modes; segmented progress, next/previous, hold/pause, volume, report and eligible Contact.",
+      "entry": "Status / Discover / Business profile / My Publications",
+      "exit": "Source page, Story viewers or Business contact",
+      "basis": "Spec and supporting UX",
+      "id": "P34",
+      "type": "Page"
+    },
+    {
+      "feature": "Stories and Discover",
+      "name": "Discover search / results",
+      "details": "Query/category refinement; eligible promoted results and empty results.",
+      "entry": "Discover search",
+      "exit": "Viewer or Business profile",
+      "basis": "Spec and supporting UX",
+      "id": "P35",
+      "type": "Page"
+    },
+    {
+      "feature": "Stories and Discover",
+      "name": "Public Business profile",
+      "details": "Public name, cover/logo, category, description, optional public location and eligible active Stories. Preserve private identity.",
+      "entry": "Discover / Story header / Business chat info",
+      "exit": "Selected eligible Story then Contact",
+      "basis": "Spec and supporting UX",
+      "id": "P36",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Publishing hub",
+      "details": "Create Status or Create Advertisement; entry to My Publications.",
+      "entry": "Status create / Profile publishing",
+      "exit": "Category selection",
+      "basis": "Spec and supporting UX",
+      "id": "P37",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Category selection",
+      "details": "Names/icons/descriptions, free/paid labels and configured category fee before media selection.",
+      "entry": "Publishing hub",
+      "exit": "Media library",
+      "basis": "Spec and supporting UX",
+      "id": "P38",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Media library picker",
+      "details": "Photo/video/audio modes and preview selection; handles gallery/library access and audio import.",
+      "entry": "Category / attachment tray / replace media",
+      "exit": "Camera or relevant editor",
+      "basis": "Spec and supporting UX",
+      "id": "P39",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Camera capture",
+      "details": "Photo/video capture, switch camera, capture/retake; reused for chats, Stories and profile imagery.",
+      "entry": "Media source chooser",
+      "exit": "Photo or video preview",
+      "basis": "Spec and supporting UX",
+      "id": "P40",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Photo preview / editor",
+      "details": "Preview, crop/rotate, caption and replace; Story and chat-send modes; image-cover editing.",
+      "entry": "Media picker / camera / cover edit",
+      "exit": "Price review, conversation send or profile save",
+      "basis": "Spec and supporting UX",
+      "id": "P41",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Video preview / editor",
+      "details": "Playback, trim, caption and replace; Story/ad mandatory Boost context; chat-send mode.",
+      "entry": "Media picker / camera",
+      "exit": "Price review or targeting",
+      "basis": "Spec and supporting UX",
+      "id": "P42",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Audio recorder / preview",
+      "details": "Record/pause/stop, import, play, re-record and choose cover; mandatory Boost for Story/ad publication.",
+      "entry": "Media picker / audio option",
+      "exit": "Price review or targeting",
+      "basis": "Spec and supporting UX",
+      "id": "P43",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Publication price review",
+      "details": "Category fee + applicable Boost + ad fee; total, balance, image-slot use, lifetime and confirmation. Recheck changed prices.",
+      "entry": "Media preview / ad targeting / successful top-up",
+      "exit": "Publish then publication details",
+      "basis": "Spec and supporting UX",
+      "id": "P44",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Advertisement audience targeting",
+      "details": "Geography, gender, one interest and audience summary; targeting remains in publishing.",
+      "entry": "Ad media preview",
+      "exit": "Location selector, reusable interest selection or price review",
+      "basis": "Spec and supporting UX",
+      "id": "P45",
+      "type": "Page"
+    },
+    {
+      "feature": "Publishing",
+      "name": "Targeting location / radius",
+      "details": "Country/city/neighborhood/radius; map/manual selection and denied-location fallback.",
+      "entry": "Ad targeting",
+      "exit": "Targeting summary",
+      "basis": "Spec and supporting UX",
+      "id": "P46",
+      "type": "Page"
+    },
+    {
+      "feature": "Business conversations",
+      "name": "Business conversation",
+      "details": "Originating Story cover, room expiry, payer/recipient modes; paid-room terms, messages and read-only expired history.",
+      "entry": "Paid-room confirmation / Chats / notification",
+      "exit": "Business info, shared media or Business call review",
+      "basis": "Spec and supporting UX",
+      "id": "P47",
+      "type": "Page"
+    },
+    {
+      "feature": "Business conversations",
+      "name": "Business conversation info",
+      "details": "Originating Story, public Business identity, room terms/expiry, permitted reopening, shared content and report/block.",
+      "entry": "Business chat header",
+      "exit": "Source Story, Business profile or shared content",
+      "basis": "Spec and supporting UX",
+      "id": "P48",
+      "type": "Page"
+    },
+    {
+      "feature": "Creator tools",
+      "name": "My Publications",
+      "details": "Statuses and ads; active/expired/removed filters; viewer, details, viewers and analytics actions.",
+      "entry": "Profile / publishing hub",
+      "exit": "Publication viewer or details",
+      "basis": "Spec and supporting UX",
+      "id": "P49",
+      "type": "Page"
+    },
+    {
+      "feature": "Creator tools",
+      "name": "Publication details",
+      "details": "Media, type/category, lifetime, original commercial terms, moderation/distribution status and statistics links.",
+      "entry": "My Publications / publish success",
+      "exit": "Viewer, Story viewers, analytics or activity",
+      "basis": "Spec and supporting UX",
+      "id": "P50",
+      "type": "Page"
+    },
+    {
+      "feature": "Creator tools",
+      "name": "Story viewers",
+      "details": "Who viewed an owned contact Story and view time; permitted contact details. Promoted views use privacy-preserving analytics.",
+      "entry": "Own Story / publication details",
+      "exit": "Permitted contact info or previous page",
+      "basis": "User addition; privacy-aware UX",
+      "id": "P51",
+      "type": "Page"
+    },
+    {
+      "feature": "Creator tools",
+      "name": "Promotion analytics",
+      "details": "Views versus qualified unique views, Popular progress, aggregate engagement and Diamond reward summary.",
+      "entry": "Publication details",
+      "exit": "Contact activity or Wallet",
+      "basis": "Spec and supporting UX",
+      "id": "P52",
+      "type": "Page"
+    },
+    {
+      "feature": "Creator tools",
+      "name": "Promotion contact activity",
+      "details": "Story-linked paid room/call activity; personal-data privacy; open existing Business room or call details.",
+      "entry": "Publication details / analytics",
+      "exit": "Existing Business chat or call details",
+      "basis": "Supporting nested UX",
+      "id": "P53",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Wallet overview",
+      "details": "Separate Credits, Diamonds and Cash; available/pending/frozen reward presentation; purchase/convert/withdraw actions.",
+      "entry": "Profile / earnings / balance shortcut",
+      "exit": "Balance activity or payment/conversion/withdrawal",
+      "basis": "Spec and supporting UX",
+      "id": "P54",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Balance activity",
+      "details": "One page with separate Credits, Diamonds and Cash ledger modes, filters and pagination.",
+      "entry": "Wallet balances",
+      "exit": "Transaction details",
+      "basis": "Spec and supporting UX",
+      "id": "P55",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Transaction details",
+      "details": "Amount/unit/direction, reference, date/status/reason and relevant Story/session/request links.",
+      "entry": "Balance activity / conversion success",
+      "exit": "Originating transaction context",
+      "basis": "Spec and supporting UX",
+      "id": "P56",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Buy Credits",
+      "details": "Package/custom amount, cash estimate and selected payment method; return-to-action context.",
+      "entry": "Wallet / insufficient Credits",
+      "exit": "Payment method and review",
+      "basis": "Spec and supporting UX",
+      "id": "P57",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Payment review",
+      "details": "Credits, amount/currency, method and final provider handoff.",
+      "entry": "Buy Credits",
+      "exit": "Provider handoff then payment status",
+      "basis": "Spec and supporting UX",
+      "id": "P58",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Payment status",
+      "details": "Processing/pending/failed/cancelled/confirmed; confirmed credit and resume interrupted action.",
+      "entry": "Provider return",
+      "exit": "Retry, Wallet or interrupted action",
+      "basis": "Spec and supporting UX",
+      "id": "P59",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Convert Diamonds",
+      "details": "Available versus pending/frozen balance, quantity, rate and Cash received.",
+      "entry": "Wallet",
+      "exit": "Conversion review then transaction details",
+      "basis": "Spec and supporting UX",
+      "id": "P60",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Withdrawal form",
+      "details": "Cash amount only; minimum/fees/frequency, payout method and phone/account destination; validation.",
+      "entry": "Wallet",
+      "exit": "Withdrawal review",
+      "basis": "Spec and supporting UX",
+      "id": "P61",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Withdrawal review",
+      "details": "Amount, fees, net payout, method/destination and confirm.",
+      "entry": "Withdrawal form",
+      "exit": "Withdrawal tracking",
+      "basis": "Spec and supporting UX",
+      "id": "P62",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Withdrawal history",
+      "details": "Requests, amounts/dates and status filters.",
+      "entry": "Wallet",
+      "exit": "Withdrawal details",
+      "basis": "Spec and supporting UX",
+      "id": "P63",
+      "type": "Page"
+    },
+    {
+      "feature": "Wallet",
+      "name": "Withdrawal details / tracking",
+      "details": "Pending, In Progress, Approved/Rejected, Paid, failure/recredit and reason/reference.",
+      "entry": "Withdrawal history / new request",
+      "exit": "Linked Cash activity or history",
+      "basis": "Spec and supporting UX",
+      "id": "P64",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Edit personal profile",
+      "details": "Private profile photo/name and relevant personal details; distinct from public Business identity.",
+      "entry": "Profile",
+      "exit": "Profile",
+      "basis": "Spec and supporting UX",
+      "id": "P65",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Edit Business profile",
+      "details": "Public display name, logo/cover, category, description and optional public location.",
+      "entry": "Profile / own Business profile",
+      "exit": "Public Business profile",
+      "basis": "Spec and supporting UX",
+      "id": "P66",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Settings",
+      "details": "Entry points to privacy, audience, notification, appearance, permissions, account and support.",
+      "entry": "Profile",
+      "exit": "Selected settings page",
+      "basis": "Spec and supporting UX",
+      "id": "P67",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Privacy settings",
+      "details": "Private-photo visibility, Story audience and blocked accounts; avoid implicit identity sharing.",
+      "entry": "Settings",
+      "exit": "Visibility sheet, audience or blocked accounts",
+      "basis": "Spec and supporting UX",
+      "id": "P68",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Status audience",
+      "details": "Contacts audience choices and exclusions/selected contacts; shared picker handles selection.",
+      "entry": "Privacy / Story editor",
+      "exit": "Shared recipient picker or previous page",
+      "basis": "Spec and supporting UX",
+      "id": "P69",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Notification settings",
+      "details": "Message, group and call notification preferences; permission status; per-chat mute is reused.",
+      "entry": "Settings",
+      "exit": "Settings or system permissions",
+      "basis": "Spec and supporting UX",
+      "id": "P70",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Appearance",
+      "details": "Light, dark or system theme, preview and readable typography settings.",
+      "entry": "Settings",
+      "exit": "Previous page",
+      "basis": "Spec and supporting UX",
+      "id": "P71",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Permissions / contact sync",
+      "details": "Contacts sync/status; camera, mic, media, location and notification permission recovery.",
+      "entry": "Settings / permission error",
+      "exit": "System settings or previous page",
+      "basis": "Spec and supporting UX",
+      "id": "P72",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Blocked accounts",
+      "details": "Search/list blocked users and public Business identities; unblock confirmation.",
+      "entry": "Privacy",
+      "exit": "Previous page or contact context",
+      "basis": "Spec and supporting UX",
+      "id": "P73",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Account settings",
+      "details": "Linked native sign-in, phone information, sign out and delete-account entry.",
+      "entry": "Settings",
+      "exit": "Confirmation or deletion explanation",
+      "basis": "Spec and supporting UX",
+      "id": "P74",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Help / support",
+      "details": "Searchable help topics and support entry points.",
+      "entry": "Settings",
+      "exit": "Help article or report form",
+      "basis": "Spec and supporting UX",
+      "id": "P75",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Help article",
+      "details": "Reusable readable article detail with return navigation.",
+      "entry": "Help",
+      "exit": "Help topics",
+      "basis": "Supporting nested UX",
+      "id": "P76",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "About Whizpee",
+      "details": "Version, app information and reusable Terms/Privacy links.",
+      "entry": "Settings",
+      "exit": "Legal text or previous page",
+      "basis": "Spec and supporting UX",
+      "id": "P77",
+      "type": "Page"
+    },
+    {
+      "feature": "Profile and settings",
+      "name": "Delete-account explanation",
+      "details": "Consequences and required acknowledgement before final destructive confirmation.",
+      "entry": "Account settings",
+      "exit": "Final confirmation or Account",
+      "basis": "Supporting account UX; retention policy to define",
+      "id": "P78",
+      "type": "Page"
+    },
+    {
+      "feature": "Safety",
+      "name": "Report form",
+      "details": "Content/account/conversation context, reason and optional explanatory text; submit result.",
+      "entry": "Story / chat / contact / Business profile",
+      "exit": "Source screen or support",
+      "basis": "Spec and supporting UX",
+      "id": "P79",
+      "type": "Page"
+    },
+    {
+      "feature": "Safety",
+      "name": "Account restriction notice",
+      "details": "Warning/suspension/ban context, reason where provided and help route.",
+      "entry": "Restricted session",
+      "exit": "Help or sign-in",
+      "basis": "Spec and supporting UX",
+      "id": "P80",
+      "type": "Page"
+    },
+    {
+      "id": "S01",
+      "feature": "Onboarding",
+      "type": "Sheet",
+      "name": "Phone country-code picker",
+      "details": "Search countries and select dialing prefix.",
+      "entry": "Complete profile",
+      "exit": "Profile phone input",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S02",
+      "feature": "Chats and contacts",
+      "type": "Sheet",
+      "name": "Chat-list actions",
+      "details": "Pin/unpin, archive/unarchive, mute, unread/read, starred and delete routes.",
+      "entry": "Chats / Archived",
+      "exit": "Conversation list",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S03",
+      "feature": "Chats and contacts",
+      "type": "Sheet",
+      "name": "Message actions",
+      "details": "Reply, copy, edit, delete, forward, star/unstar, pin/unpin, react and message info.",
+      "entry": "Long-press message",
+      "exit": "Composer, picker, details or confirmation",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S04",
+      "feature": "Chats and contacts",
+      "type": "Sheet",
+      "name": "Attachment tray",
+      "details": "Photo/video, camera, file, audio or contact; contextual send actions.",
+      "entry": "Conversation composer",
+      "exit": "Shared picker or media tools",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S05",
+      "feature": "Chats and contacts",
+      "type": "Sheet",
+      "name": "Media source / photo actions",
+      "details": "Camera, library, audio import, replace or remove where applicable; reused by all editors.",
+      "entry": "Profile / Business edit / group / Story / chat",
+      "exit": "Relevant capture/editor",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S06",
+      "feature": "Chats and contacts",
+      "type": "Sheet",
+      "name": "Mute-duration chooser",
+      "details": "Conversation mute duration and unmute.",
+      "entry": "Chat info / group info / chat-list actions",
+      "exit": "Source screen",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S07",
+      "feature": "Chats and contacts",
+      "type": "Sheet",
+      "name": "Reaction picker",
+      "details": "Expanded emoji choice and remove own reaction.",
+      "entry": "Message actions / quick reaction",
+      "exit": "Source message",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S08",
+      "feature": "Groups",
+      "type": "Sheet",
+      "name": "Group member actions",
+      "details": "View member, message, promote/demote, remove or transfer ownership according to role.",
+      "entry": "Group members",
+      "exit": "Contact info or group confirmation",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S09",
+      "feature": "Calls",
+      "type": "Sheet",
+      "name": "Audio-output chooser",
+      "details": "Earpiece/speaker/available device choices.",
+      "entry": "Active audio/video call",
+      "exit": "Active call",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S10",
+      "feature": "Calls",
+      "type": "Sheet",
+      "name": "Minimized-call overlay",
+      "details": "Persistent compact call context with return/end.",
+      "entry": "Active call minimize",
+      "exit": "Active call or call summary",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S11",
+      "feature": "Calls",
+      "type": "Sheet",
+      "name": "Business call preflight",
+      "details": "Rate, balance, affordable duration and caller confirmation before ringing.",
+      "entry": "Eligible Business contact / callback",
+      "exit": "Outgoing call",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S12",
+      "feature": "Stories and Discover",
+      "type": "Sheet",
+      "name": "Story options",
+      "details": "Business profile, report/block; own Story management uses publication actions.",
+      "entry": "Story viewer",
+      "exit": "Relevant context",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S13",
+      "feature": "Publishing",
+      "type": "Sheet",
+      "name": "Boost explanation / options",
+      "details": "Mandatory video/audio Boost, optional photo Boost, configured price/lifetime and proceed.",
+      "entry": "Media choice / price review",
+      "exit": "Editor or price review",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S14",
+      "feature": "Publishing",
+      "type": "Sheet",
+      "name": "Publication actions",
+      "details": "Open, details, viewers, analytics/contact activity and delete.",
+      "entry": "My Publications / own Story",
+      "exit": "Selected creator screen or confirmation",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S15",
+      "feature": "Publishing",
+      "type": "Sheet",
+      "name": "Target-area chooser",
+      "details": "Cascading country/city/neighborhood options; map handles radius on the full page.",
+      "entry": "Targeting location",
+      "exit": "Location page",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S16",
+      "feature": "Business conversations",
+      "type": "Sheet",
+      "name": "Business contact selector",
+      "details": "Message10/24h, audio15/started60s, video25/started60s; active-room shortcut.",
+      "entry": "Eligible promoted Story",
+      "exit": "Room confirmation or call preflight",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S17",
+      "feature": "Wallet",
+      "type": "Sheet",
+      "name": "Insufficient Credits",
+      "details": "Required/current/missing amount and Buy Credits; preserve interrupted action.",
+      "entry": "Any paid confirmation",
+      "exit": "Buy Credits or previous action",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S18",
+      "feature": "Wallet",
+      "type": "Sheet",
+      "name": "Payment method chooser",
+      "details": "SmobilPay/Maviance: MTN Mobile Money or Orange Mobile Money; phone and provider selection.",
+      "entry": "Buy Credits",
+      "exit": "Payment review",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S19",
+      "feature": "Wallet",
+      "type": "Sheet",
+      "name": "Diamond conversion review",
+      "details": "Quantity/rate/Cash and confirm; handle changed rate before debit.",
+      "entry": "Convert Diamonds",
+      "exit": "Transaction details or form",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S20",
+      "feature": "Wallet",
+      "type": "Sheet",
+      "name": "Payout-method chooser",
+      "details": "Configured payout methods; phone/account type and fee explanation.",
+      "entry": "Withdrawal form",
+      "exit": "Withdrawal form",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "S21",
+      "feature": "Profile and settings",
+      "type": "Sheet",
+      "name": "Private-photo visibility",
+      "details": "Privacy options according to product rules; save and cancel.",
+      "entry": "Privacy settings",
+      "exit": "Privacy settings",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D01",
+      "feature": "Publishing",
+      "type": "Dialog",
+      "name": "Discard unsaved changes",
+      "details": "Discard or keep editing; reused by chat media, profiles, group edits and publication drafts.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D02",
+      "feature": "Chats and contacts",
+      "type": "Dialog",
+      "name": "Delete message",
+      "details": "Choose delete for self or permitted delete for everyone; expose rules through available actions.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D03",
+      "feature": "Chats and contacts",
+      "type": "Dialog",
+      "name": "Delete conversation",
+      "details": "Delete the selected conversation/history locally according to product rules.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D04",
+      "feature": "Chats and contacts",
+      "type": "Dialog",
+      "name": "Clear conversation history",
+      "details": "Clear messages while retaining the conversation entry.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D05",
+      "feature": "Chats and contacts",
+      "type": "Dialog",
+      "name": "Delete device contact",
+      "details": "Confirm removal through device-contact management.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D06",
+      "feature": "Groups",
+      "type": "Dialog",
+      "name": "Leave group",
+      "details": "Confirm exit; explain owner-transfer prerequisite when applicable.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D07",
+      "feature": "Groups",
+      "type": "Dialog",
+      "name": "Remove group member",
+      "details": "Confirm target member and removal.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D08",
+      "feature": "Groups",
+      "type": "Dialog",
+      "name": "Promote member to admin",
+      "details": "Confirm grant of group management permissions.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D09",
+      "feature": "Groups",
+      "type": "Dialog",
+      "name": "Demote group admin",
+      "details": "Confirm removal of group admin permissions.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D10",
+      "feature": "Groups",
+      "type": "Dialog",
+      "name": "Transfer group ownership",
+      "details": "Confirm new owner and changed permissions.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D11",
+      "feature": "Calls",
+      "type": "Dialog",
+      "name": "Delete call-history entry",
+      "details": "Confirm deletion of selected history entry.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D12",
+      "feature": "Calls",
+      "type": "Dialog",
+      "name": "Low paid-call balance warning",
+      "details": "Warn before the last affordable paid block ends; end at boundary.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D13",
+      "feature": "Publishing",
+      "type": "Dialog",
+      "name": "Delete own publication",
+      "details": "Confirm removal of active/expired owned Story or advertisement.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D14",
+      "feature": "Publishing",
+      "type": "Dialog",
+      "name": "Price / configuration changed",
+      "details": "Show changed category/Boost/ad terms and require refreshed review.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D15",
+      "feature": "Publishing",
+      "type": "Dialog",
+      "name": "Image-slot limit reached",
+      "details": "Explain current configured quota; category payment does not buy a slot.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D16",
+      "feature": "Business conversations",
+      "type": "Dialog",
+      "name": "Open / reopen paid Business room",
+      "details": "Confirm price/duration and eligible source Story; no per-message fee.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D17",
+      "feature": "Business conversations",
+      "type": "Dialog",
+      "name": "Business interaction limit reached",
+      "details": "Explain configured per-Story CTA limit and unavailable new action.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D18",
+      "feature": "Wallet",
+      "type": "Dialog",
+      "name": "Cancel in-progress payment",
+      "details": "Explain pending provider confirmation and return destination.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D19",
+      "feature": "Profile and settings",
+      "type": "Dialog",
+      "name": "Sign out",
+      "details": "Confirm account sign-out.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D20",
+      "feature": "Profile and settings",
+      "type": "Dialog",
+      "name": "Final account deletion",
+      "details": "Final destructive confirmation after explanation and acknowledgement.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D21",
+      "feature": "Safety",
+      "type": "Dialog",
+      "name": "Block account / Business",
+      "details": "Confirm communication restriction without revealing private identity.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D22",
+      "feature": "Safety",
+      "type": "Dialog",
+      "name": "Unblock account / Business",
+      "details": "Confirm removal from blocked list.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    },
+    {
+      "id": "D23",
+      "feature": "Safety",
+      "type": "Dialog",
+      "name": "Permission recovery guidance",
+      "details": "Explain unavailable permission and offer Open Settings.",
+      "entry": "Relevant action in the owning flow",
+      "exit": "Confirm action or return without change",
+      "basis": "Spec and supporting UX"
+    }
+  ],
+  "features": [
+    "Navigation",
+    "Onboarding",
+    "Chats and contacts",
+    "Groups",
+    "Calls",
+    "Stories and Discover",
+    "Publishing",
+    "Business conversations",
+    "Creator tools",
+    "Wallet",
+    "Profile and settings",
+    "Safety"
+  ],
+  "counts": [
+    {
+      "feature": "Navigation",
+      "tabs": 5,
+      "pages": 0,
+      "sheets": 0,
+      "dialogs": 0
+    },
+    {
+      "feature": "Onboarding",
+      "tabs": 0,
+      "pages": 6,
+      "sheets": 1,
+      "dialogs": 0
+    },
+    {
+      "feature": "Chats and contacts",
+      "tabs": 0,
+      "pages": 11,
+      "sheets": 6,
+      "dialogs": 4
+    },
+    {
+      "feature": "Groups",
+      "tabs": 0,
+      "pages": 5,
+      "sheets": 1,
+      "dialogs": 5
+    },
+    {
+      "feature": "Calls",
+      "tabs": 0,
+      "pages": 6,
+      "sheets": 3,
+      "dialogs": 2
+    },
+    {
+      "feature": "Stories and Discover",
+      "tabs": 0,
+      "pages": 3,
+      "sheets": 1,
+      "dialogs": 0
+    },
+    {
+      "feature": "Publishing",
+      "tabs": 0,
+      "pages": 10,
+      "sheets": 3,
+      "dialogs": 4
+    },
+    {
+      "feature": "Business conversations",
+      "tabs": 0,
+      "pages": 2,
+      "sheets": 1,
+      "dialogs": 2
+    },
+    {
+      "feature": "Creator tools",
+      "tabs": 0,
+      "pages": 5,
+      "sheets": 0,
+      "dialogs": 0
+    },
+    {
+      "feature": "Wallet",
+      "tabs": 0,
+      "pages": 11,
+      "sheets": 4,
+      "dialogs": 1
+    },
+    {
+      "feature": "Profile and settings",
+      "tabs": 0,
+      "pages": 14,
+      "sheets": 1,
+      "dialogs": 2
+    },
+    {
+      "feature": "Safety",
+      "tabs": 0,
+      "pages": 2,
+      "sheets": 0,
+      "dialogs": 3
+    }
+  ],
+  "states": [
+    {
+      "id": "V001",
+      "feature": "Navigation",
+      "surface": "P01",
+      "name": "Initial application loading",
+      "expectation": "Show loading before initial destinations are available."
+    },
+    {
+      "id": "V002",
+      "feature": "Navigation",
+      "surface": "P01",
+      "name": "Offline / reconnecting",
+      "expectation": "Show network state and retain navigation and pending messages."
+    },
+    {
+      "id": "V003",
+      "feature": "Navigation",
+      "surface": "P01",
+      "name": "Recoverable page error",
+      "expectation": "Explain failure and offer retry without losing previous context."
+    },
+    {
+      "id": "V004",
+      "feature": "Onboarding",
+      "surface": "P06",
+      "name": "Sign-in in progress",
+      "expectation": "Prevent repeated submission."
+    },
+    {
+      "id": "V005",
+      "feature": "Onboarding",
+      "surface": "P06",
+      "name": "Sign-in cancelled",
+      "expectation": "Return to sign-in with retry."
+    },
+    {
+      "id": "V006",
+      "feature": "Onboarding",
+      "surface": "P06",
+      "name": "Sign-in failed",
+      "expectation": "Show reason where safe and retry."
+    },
+    {
+      "id": "V007",
+      "feature": "Onboarding",
+      "surface": "P07",
+      "name": "Invalid required phone / profile",
+      "expectation": "Inline field errors; preserve values."
+    },
+    {
+      "id": "V008",
+      "feature": "Onboarding",
+      "surface": "P07",
+      "name": "Terms not accepted",
+      "expectation": "Keep continuation unavailable until required consent."
+    },
+    {
+      "id": "V009",
+      "feature": "Onboarding",
+      "surface": "P08",
+      "name": "Fewer than three interests",
+      "expectation": "Show required minimum and current selection count."
+    },
+    {
+      "id": "V010",
+      "feature": "Onboarding",
+      "surface": "P08",
+      "name": "Single-interest ad mode",
+      "expectation": "Allow one targeting interest using the same selection destination."
+    },
+    {
+      "id": "V011",
+      "feature": "Onboarding",
+      "surface": "P09",
+      "name": "Contacts permission declined",
+      "expectation": "Complete registration and allow later recovery."
+    },
+    {
+      "id": "V012",
+      "feature": "Onboarding",
+      "surface": "P09",
+      "name": "Contact matching in progress",
+      "expectation": "Show sync/loading."
+    },
+    {
+      "id": "V013",
+      "feature": "Onboarding",
+      "surface": "P09",
+      "name": "No matching app contacts",
+      "expectation": "No matching contacts; offer Add contact or permission recovery. No invitation system."
+    },
+    {
+      "id": "V014",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Sending message",
+      "expectation": "Pending network indicator."
+    },
+    {
+      "id": "V015",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Message sent",
+      "expectation": "Sent receipt."
+    },
+    {
+      "id": "V016",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Message delivered",
+      "expectation": "Delivery receipt."
+    },
+    {
+      "id": "V017",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Message read",
+      "expectation": "Read receipt where enabled."
+    },
+    {
+      "id": "V018",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Offline queued message",
+      "expectation": "Pending state and later retry."
+    },
+    {
+      "id": "V019",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Message failed",
+      "expectation": "Retry action without creating duplicate visible messages."
+    },
+    {
+      "id": "V020",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Reply composer",
+      "expectation": "Quoted source and cancel reply."
+    },
+    {
+      "id": "V021",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Edit composer",
+      "expectation": "Current message content, save and cancel."
+    },
+    {
+      "id": "V022",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Voice recording",
+      "expectation": "Record timer, cancel, lock and send controls."
+    },
+    {
+      "id": "V023",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Voice recording locked",
+      "expectation": "Hands-free recording with stop/cancel/send."
+    },
+    {
+      "id": "V024",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Blocked direct chat",
+      "expectation": "Show restriction and route to unblock."
+    },
+    {
+      "id": "V025",
+      "feature": "Chats and contacts",
+      "surface": "P14",
+      "name": "Attachment upload progress / failure",
+      "expectation": "Progress and retry or remove attachment."
+    },
+    {
+      "id": "V026",
+      "feature": "Chats and contacts",
+      "surface": "P13",
+      "name": "No search matches",
+      "expectation": "Query retained; clear or refine search."
+    },
+    {
+      "id": "V027",
+      "feature": "Chats and contacts",
+      "surface": "P19",
+      "name": "Empty archived list",
+      "expectation": "Explain archived conversations and return."
+    },
+    {
+      "id": "V028",
+      "feature": "Chats and contacts",
+      "surface": "P22",
+      "name": "Unsupported file preview",
+      "expectation": "Show metadata and open/download handoff."
+    },
+    {
+      "id": "V029",
+      "feature": "Groups",
+      "surface": "P23",
+      "name": "Owner view",
+      "expectation": "Expose appropriate ownership and management actions."
+    },
+    {
+      "id": "V030",
+      "feature": "Groups",
+      "surface": "P23",
+      "name": "Admin view",
+      "expectation": "Expose permitted management actions."
+    },
+    {
+      "id": "V031",
+      "feature": "Groups",
+      "surface": "P23",
+      "name": "Member view",
+      "expectation": "Hide privileged actions."
+    },
+    {
+      "id": "V032",
+      "feature": "Groups",
+      "surface": "P23",
+      "name": "Only admins may send",
+      "expectation": "Read-only composer with explanation."
+    },
+    {
+      "id": "V033",
+      "feature": "Groups",
+      "surface": "P23",
+      "name": "Mention suggestions",
+      "expectation": "Inline eligible member suggestions while composing."
+    },
+    {
+      "id": "V034",
+      "feature": "Groups",
+      "surface": "P23",
+      "name": "Removed member",
+      "expectation": "Retain allowed read-only history; disable new sends."
+    },
+    {
+      "id": "V035",
+      "feature": "Groups",
+      "surface": "P23",
+      "name": "Left group",
+      "expectation": "Show left-group history and unavailable composer."
+    },
+    {
+      "id": "V036",
+      "feature": "Groups",
+      "surface": "P26",
+      "name": "Member search has no results",
+      "expectation": "Keep query and clear option."
+    },
+    {
+      "id": "V037",
+      "feature": "Groups",
+      "surface": "P26",
+      "name": "Owner transfer selection",
+      "expectation": "Choose eligible replacement owner."
+    },
+    {
+      "id": "V038",
+      "feature": "Groups",
+      "surface": "P26",
+      "name": "No permission for member action",
+      "expectation": "Hide or explain unavailable action."
+    },
+    {
+      "id": "V039",
+      "feature": "Groups",
+      "surface": "P24",
+      "name": "Group creation / update in progress",
+      "expectation": "Prevent duplicate submissions."
+    },
+    {
+      "id": "V040",
+      "feature": "Groups",
+      "surface": "P24",
+      "name": "Group creation / update failed",
+      "expectation": "Preserve entered group data and retry."
+    },
+    {
+      "id": "V041",
+      "feature": "Groups",
+      "surface": "P18",
+      "name": "Partial group delivery / reads",
+      "expectation": "Show separate participant receipt states."
+    },
+    {
+      "id": "V042",
+      "feature": "Groups",
+      "surface": "P18",
+      "name": "All group recipients read",
+      "expectation": "Show complete read receipt list."
+    },
+    {
+      "id": "V043",
+      "feature": "Groups",
+      "surface": "P12",
+      "name": "Add members / already present",
+      "expectation": "Disable existing members and show selected additions."
+    },
+    {
+      "id": "V044",
+      "feature": "Groups",
+      "surface": "P12",
+      "name": "Multiselect empty",
+      "expectation": "Keep forward/add/create action unavailable until selection."
+    },
+    {
+      "id": "V045",
+      "feature": "Calls",
+      "surface": "P29",
+      "name": "Personal call ringing",
+      "expectation": "Show normal contact identity and no paid controls."
+    },
+    {
+      "id": "V046",
+      "feature": "Calls",
+      "surface": "P29",
+      "name": "Business call ringing",
+      "expectation": "Originating cover and no charge while ringing."
+    },
+    {
+      "id": "V047",
+      "feature": "Calls",
+      "surface": "P29",
+      "name": "Busy",
+      "expectation": "Show busy result and retry."
+    },
+    {
+      "id": "V048",
+      "feature": "Calls",
+      "surface": "P29",
+      "name": "Declined",
+      "expectation": "Show declined result without charge."
+    },
+    {
+      "id": "V049",
+      "feature": "Calls",
+      "surface": "P29",
+      "name": "Unanswered / missed",
+      "expectation": "Show no-answer outcome without Business debit."
+    },
+    {
+      "id": "V050",
+      "feature": "Calls",
+      "surface": "P30",
+      "name": "Incoming personal call",
+      "expectation": "Answer/decline personal audio or video."
+    },
+    {
+      "id": "V051",
+      "feature": "Calls",
+      "surface": "P30",
+      "name": "Incoming Business call",
+      "expectation": "Show status context; recipient has no pay-to-answer gate."
+    },
+    {
+      "id": "V052",
+      "feature": "Calls",
+      "surface": "P31",
+      "name": "Business call answered",
+      "expectation": "Start paid-block billing presentation after answer."
+    },
+    {
+      "id": "V053",
+      "feature": "Calls",
+      "surface": "P31",
+      "name": "Reconnecting call",
+      "expectation": "Retain session context and show connection recovery."
+    },
+    {
+      "id": "V054",
+      "feature": "Calls",
+      "surface": "P33",
+      "name": "Balance-boundary stop",
+      "expectation": "Show automatic end reason and actual consumed Credits."
+    },
+    {
+      "id": "V055",
+      "feature": "Calls",
+      "surface": "P33",
+      "name": "Permission-blocked call",
+      "expectation": "Explain mic/camera recovery before retry."
+    },
+    {
+      "id": "V056",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Contact Story",
+      "expectation": "Show privacy-permitted contact identity."
+    },
+    {
+      "id": "V057",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Business Story",
+      "expectation": "Use originating cover and public Business context."
+    },
+    {
+      "id": "V058",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Own Story",
+      "expectation": "Show management/viewers entry."
+    },
+    {
+      "id": "V059",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Image playback",
+      "expectation": "Show timed segments."
+    },
+    {
+      "id": "V060",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Video playback",
+      "expectation": "Play video and advance when complete."
+    },
+    {
+      "id": "V061",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Audio playback",
+      "expectation": "Show cover/waveform and audio controls."
+    },
+    {
+      "id": "V062",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Seen Story",
+      "expectation": "Keep accessible until expiration with seen appearance."
+    },
+    {
+      "id": "V063",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Paused Story",
+      "expectation": "Hold/pause freezes playback progress."
+    },
+    {
+      "id": "V064",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Muted playback",
+      "expectation": "Reflect audio mute status."
+    },
+    {
+      "id": "V065",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Expired Story",
+      "expectation": "Prevent new eligible paid contact action."
+    },
+    {
+      "id": "V066",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Removed Story",
+      "expectation": "Stop distribution and show unavailable explanation."
+    },
+    {
+      "id": "V067",
+      "feature": "Stories and Discover",
+      "surface": "P34",
+      "name": "Story media failed to load",
+      "expectation": "Retry or move to next eligible Story."
+    },
+    {
+      "id": "V068",
+      "feature": "Stories and Discover",
+      "surface": "P03",
+      "name": "No contact Stories",
+      "expectation": "Maintain usable Status Home with create/discovery entries."
+    },
+    {
+      "id": "V069",
+      "feature": "Stories and Discover",
+      "surface": "P04",
+      "name": "No eligible promoted content",
+      "expectation": "Show appropriate empty state."
+    },
+    {
+      "id": "V070",
+      "feature": "Stories and Discover",
+      "surface": "P35",
+      "name": "No eligible search results",
+      "expectation": "Keep search and refinements available."
+    },
+    {
+      "id": "V071",
+      "feature": "Stories and Discover",
+      "surface": "P36",
+      "name": "No eligible active Stories",
+      "expectation": "Keep public details visible; no detached paid-contact route."
+    },
+    {
+      "id": "V072",
+      "feature": "Publishing",
+      "surface": "P38",
+      "name": "Free category",
+      "expectation": "No category publication fee."
+    },
+    {
+      "id": "V073",
+      "feature": "Publishing",
+      "surface": "P38",
+      "name": "Paid category",
+      "expectation": "Show configured category fee before continuation."
+    },
+    {
+      "id": "V074",
+      "feature": "Publishing",
+      "surface": "P44",
+      "name": "Image slot available",
+      "expectation": "Show post-publication slot usage."
+    },
+    {
+      "id": "V075",
+      "feature": "Publishing",
+      "surface": "P44",
+      "name": "Paid-category image uses slot",
+      "expectation": "Charge category fee and consume available image slot."
+    },
+    {
+      "id": "V076",
+      "feature": "Publishing",
+      "surface": "P44",
+      "name": "Video / audio Boost mandatory",
+      "expectation": "Include Boost in price and eligibility."
+    },
+    {
+      "id": "V077",
+      "feature": "Publishing",
+      "surface": "P44",
+      "name": "Video / audio advertisement total",
+      "expectation": "Include category + mandatory Boost + advertisement fee."
+    },
+    {
+      "id": "V078",
+      "feature": "Publishing",
+      "surface": "P44",
+      "name": "Insufficient Credits",
+      "expectation": "Route through shared balance sheet and resume after confirmed top-up."
+    },
+    {
+      "id": "V079",
+      "feature": "Publishing",
+      "surface": "P44",
+      "name": "Price / configuration changed",
+      "expectation": "Require refreshed itemized review."
+    },
+    {
+      "id": "V080",
+      "feature": "Publishing",
+      "surface": "P44",
+      "name": "Publishing in progress",
+      "expectation": "Show upload/publish progress and prevent duplicate submit."
+    },
+    {
+      "id": "V081",
+      "feature": "Publishing",
+      "surface": "P44",
+      "name": "Publication failed",
+      "expectation": "Preserve selected media/targeting and offer retry."
+    },
+    {
+      "id": "V082",
+      "feature": "Publishing",
+      "surface": "P44",
+      "name": "Publication succeeded",
+      "expectation": "Open publication details / own viewer with success feedback."
+    },
+    {
+      "id": "V083",
+      "feature": "Publishing",
+      "surface": "P46",
+      "name": "Location denied / manual targeting",
+      "expectation": "Keep manual geography input available."
+    },
+    {
+      "id": "V084",
+      "feature": "Business conversations",
+      "surface": "P47",
+      "name": "Customer active room",
+      "expectation": "Show expiry and no per-message charge."
+    },
+    {
+      "id": "V085",
+      "feature": "Business conversations",
+      "surface": "P47",
+      "name": "Recipient active room",
+      "expectation": "Allow replies without recipient purchase."
+    },
+    {
+      "id": "V086",
+      "feature": "Business conversations",
+      "surface": "P47",
+      "name": "Active room / originating Story expired",
+      "expectation": "Room remains usable until its own expiration."
+    },
+    {
+      "id": "V087",
+      "feature": "Business conversations",
+      "surface": "P47",
+      "name": "Expired room / source still eligible",
+      "expectation": "Read-only history and paid reopening option."
+    },
+    {
+      "id": "V088",
+      "feature": "Business conversations",
+      "surface": "P47",
+      "name": "Expired room / source unavailable",
+      "expectation": "Read-only history; new CTA unavailable."
+    },
+    {
+      "id": "V089",
+      "feature": "Business conversations",
+      "surface": "P47",
+      "name": "Interaction reopening cap reached",
+      "expectation": "Explain configured limit."
+    },
+    {
+      "id": "V090",
+      "feature": "Business conversations",
+      "surface": "P47",
+      "name": "Active room reopened from Story",
+      "expectation": "Open the existing room without charging again."
+    },
+    {
+      "id": "V091",
+      "feature": "Creator tools",
+      "surface": "P51",
+      "name": "No contact viewers yet",
+      "expectation": "Show zero-view state."
+    },
+    {
+      "id": "V092",
+      "feature": "Creator tools",
+      "surface": "P51",
+      "name": "Contact viewers available",
+      "expectation": "List permitted identity and view time without exposing private non-contact data."
+    },
+    {
+      "id": "V093",
+      "feature": "Creator tools",
+      "surface": "P52",
+      "name": "Below Popular threshold",
+      "expectation": "Show qualified progress."
+    },
+    {
+      "id": "V094",
+      "feature": "Creator tools",
+      "surface": "P52",
+      "name": "Popular threshold reached",
+      "expectation": "Show badge and qualifying count."
+    },
+    {
+      "id": "V095",
+      "feature": "Creator tools",
+      "surface": "P52",
+      "name": "Suspicious views held",
+      "expectation": "Distinguish ordinary views and qualified count."
+    },
+    {
+      "id": "V096",
+      "feature": "Creator tools",
+      "surface": "P49",
+      "name": "No publications / no filter matches",
+      "expectation": "Show create action and appropriate explanation."
+    },
+    {
+      "id": "V097",
+      "feature": "Wallet",
+      "surface": "P59",
+      "name": "Payment processing",
+      "expectation": "No credit before confirmation."
+    },
+    {
+      "id": "V098",
+      "feature": "Wallet",
+      "surface": "P59",
+      "name": "Payment pending",
+      "expectation": "Offer status refresh and preserve reference."
+    },
+    {
+      "id": "V099",
+      "feature": "Wallet",
+      "surface": "P59",
+      "name": "Payment failed",
+      "expectation": "Explain failure and retry."
+    },
+    {
+      "id": "V100",
+      "feature": "Wallet",
+      "surface": "P59",
+      "name": "Payment cancelled",
+      "expectation": "Return to previous purchase/action."
+    },
+    {
+      "id": "V101",
+      "feature": "Wallet",
+      "surface": "P59",
+      "name": "Payment confirmed",
+      "expectation": "Credit balance and resume originating action."
+    },
+    {
+      "id": "V102",
+      "feature": "Wallet",
+      "surface": "P57",
+      "name": "MTN Mobile Money selected",
+      "expectation": "Collect applicable details in method flow."
+    },
+    {
+      "id": "V103",
+      "feature": "Wallet",
+      "surface": "P57",
+      "name": "Orange Mobile Money selected",
+      "expectation": "SmobilPay checkout with Orange Mobile Money."
+    },
+    {
+      "id": "V104",
+      "feature": "Wallet",
+      "surface": "P57",
+      "name": "SmobilPay provider confirmation",
+      "expectation": "Confirm through the configured SmobilPay method; credit only after confirmed payment."
+    },
+    {
+      "id": "V105",
+      "feature": "Wallet",
+      "surface": "P55",
+      "name": "No activity for selected balance",
+      "expectation": "Show correct balance unit and empty state."
+    },
+    {
+      "id": "V106",
+      "feature": "Wallet",
+      "surface": "P60",
+      "name": "Pending Diamonds",
+      "expectation": "Exclude unavailable rewards from convertible amount."
+    },
+    {
+      "id": "V107",
+      "feature": "Wallet",
+      "surface": "P60",
+      "name": "Frozen Diamonds",
+      "expectation": "Explain held amount and conversion restriction."
+    },
+    {
+      "id": "V108",
+      "feature": "Wallet",
+      "surface": "P60",
+      "name": "Conversion submitted / failed",
+      "expectation": "Preserve quantity and display submitting or retry feedback."
+    },
+    {
+      "id": "V109",
+      "feature": "Wallet",
+      "surface": "P60",
+      "name": "Conversion confirmed",
+      "expectation": "Update Diamonds/Cash and open transaction detail."
+    },
+    {
+      "id": "V110",
+      "feature": "Wallet",
+      "surface": "P61",
+      "name": "Below withdrawal minimum",
+      "expectation": "Inline minimum and amount validation."
+    },
+    {
+      "id": "V111",
+      "feature": "Wallet",
+      "surface": "P61",
+      "name": "Fee / net payout review",
+      "expectation": "Show fee and net Cash."
+    },
+    {
+      "id": "V112",
+      "feature": "Wallet",
+      "surface": "P61",
+      "name": "Invalid destination",
+      "expectation": "Inline phone/account validation."
+    },
+    {
+      "id": "V113",
+      "feature": "Wallet",
+      "surface": "P61",
+      "name": "Frequency limit reached",
+      "expectation": "Explain next eligible action according to configured rule."
+    },
+    {
+      "id": "V114",
+      "feature": "Wallet",
+      "surface": "P64",
+      "name": "Pending withdrawal",
+      "expectation": "Show queued request."
+    },
+    {
+      "id": "V115",
+      "feature": "Wallet",
+      "surface": "P64",
+      "name": "Withdrawal in progress",
+      "expectation": "Show processing."
+    },
+    {
+      "id": "V116",
+      "feature": "Wallet",
+      "surface": "P64",
+      "name": "Withdrawal approved",
+      "expectation": "Show approved awaiting payment."
+    },
+    {
+      "id": "V117",
+      "feature": "Wallet",
+      "surface": "P64",
+      "name": "Withdrawal rejected",
+      "expectation": "Show reason and Cash outcome."
+    },
+    {
+      "id": "V118",
+      "feature": "Wallet",
+      "surface": "P64",
+      "name": "Withdrawal paid",
+      "expectation": "Show completion reference."
+    },
+    {
+      "id": "V119",
+      "feature": "Wallet",
+      "surface": "P64",
+      "name": "Technical payout failure / recredit",
+      "expectation": "Show failure and returned Cash."
+    },
+    {
+      "id": "V120",
+      "feature": "Profile and settings",
+      "surface": "P71",
+      "name": "Light theme",
+      "expectation": "Apply shared design tokens."
+    },
+    {
+      "id": "V121",
+      "feature": "Profile and settings",
+      "surface": "P71",
+      "name": "Dark theme",
+      "expectation": "Apply readable dark colors."
+    },
+    {
+      "id": "V122",
+      "feature": "Profile and settings",
+      "surface": "P71",
+      "name": "System theme",
+      "expectation": "Follow current device theme."
+    },
+    {
+      "id": "V123",
+      "feature": "Profile and settings",
+      "surface": "P73",
+      "name": "No blocked accounts",
+      "expectation": "Show empty list."
+    },
+    {
+      "id": "V124",
+      "feature": "Profile and settings",
+      "surface": "P66",
+      "name": "Business profile incomplete",
+      "expectation": "Inline public-field validation and save progress/failure."
+    },
+    {
+      "id": "V125",
+      "feature": "Profile and settings",
+      "surface": "P72",
+      "name": "Permission permanently denied",
+      "expectation": "Offer system settings recovery."
+    },
+    {
+      "id": "V126",
+      "feature": "Safety",
+      "surface": "P79",
+      "name": "Report submitted",
+      "expectation": "Show confirmation in the same route."
+    },
+    {
+      "id": "V127",
+      "feature": "Safety",
+      "surface": "P79",
+      "name": "Report failed",
+      "expectation": "Preserve input and offer retry."
+    },
+    {
+      "id": "V128",
+      "feature": "Safety",
+      "surface": "P80",
+      "name": "Warning",
+      "expectation": "Show reason and available next action."
+    },
+    {
+      "id": "V129",
+      "feature": "Safety",
+      "surface": "P80",
+      "name": "Suspension",
+      "expectation": "Show restricted account status."
+    },
+    {
+      "id": "V130",
+      "feature": "Safety",
+      "surface": "P80",
+      "name": "Permanent ban",
+      "expectation": "Show restriction and support route."
+    }
+  ]
+}

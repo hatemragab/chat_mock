@@ -1,0 +1,4251 @@
+{
+  "schemaVersion": "1.0",
+  "unit": "Flutter logical pixel / browser CSS pixel at100% zoom",
+  "breakpoints": {
+    "compact": [
+      0,
+      599
+    ],
+    "medium": [
+      600,
+      1023
+    ],
+    "expanded": [
+      1024,
+      1439
+    ],
+    "large": [
+      1440,
+      null
+    ]
+  },
+  "railWidth": 76,
+  "masterWidth": 336,
+  "optionalChatInfoWidth": 320,
+  "formMaxWidth": 640,
+  "contentMaxWidth": 1200,
+  "surfaces": [
+    {
+      "id": "P01",
+      "name": "Chats tab",
+      "family": "chat_master",
+      "context": "chatFilter:All/Unread/Contacts/Groups/Business; selectedConversationId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P01-chats-tab.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P02",
+      "name": "Calls tab",
+      "family": "call_master",
+      "context": "filter:All/Missed/Business; selectedCallId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_call_history_master_336_plus_detail",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_call_history_master_336_plus_detail",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P02-calls-tab.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P03",
+      "name": "Status tab",
+      "family": "status_master",
+      "context": "source:Status; selectedStoryId?; seenFilter?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P03-status-tab.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P04",
+      "name": "Discover tab",
+      "family": "discover_grid",
+      "context": "category:For you or categoryId; eligibleStoryId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 1200
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 1200
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        }
+      },
+      "spec_file": "screen_specs/P04-discover-tab.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P05",
+      "name": "Profile tab",
+      "family": "profile_summary",
+      "context": "profileId:self",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 960
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 960
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 960
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 960
+        }
+      },
+      "spec_file": "screen_specs/P05-profile-tab.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P06",
+      "name": "Welcome / sign-in",
+      "family": "auth",
+      "context": "returnTo?:typedDestination; signInMethod?:Google/Apple",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P06-welcome-sign-in.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P07",
+      "name": "Complete profile and phone",
+      "family": "form",
+      "context": "mode:onboarding; profileDraft; phone:{countryCode,local,international}",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P07-complete-profile-and-phone.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P08",
+      "name": "Interest selection",
+      "family": "selection",
+      "context": "mode:onboarding/edit/targeting; returnTo?; selectedInterestIds[]",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P08-interest-selection.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P09",
+      "name": "Contacts access explanation",
+      "family": "permission",
+      "context": "mode:onboarding/recovery; contactsPermission:unknown/granted/denied/permanentDenied",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P09-contacts-access-explanation.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P10",
+      "name": "Terms of Service",
+      "family": "reading",
+      "context": "returnTo:typedDestination",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P10-terms-of-service.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P11",
+      "name": "Privacy Policy",
+      "family": "reading",
+      "context": "returnTo:typedDestination",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "standalone_bounded_onboarding_no_navigation",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P11-privacy-policy.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P12",
+      "name": "Contacts / recipient picker",
+      "family": "contact_picker",
+      "context": "mode:chat/call/create/add/forward/audience/transfer; conversationId?; groupId?; selectedIds[]; returnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P12-contacts-recipient-picker.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P13",
+      "name": "Chat and message search",
+      "family": "search_list",
+      "context": "scope:global/direct/group/business; conversationId?; query; targetMessageId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P13-chat-and-message-search.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P14",
+      "name": "Direct conversation",
+      "family": "conversation",
+      "context": "conversationId; contactId; targetMessageId?; replyToId?; editMessageId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320,
+          "optionalContextWidth": 320,
+          "contextPage": "P15",
+          "contextInitiallyOpen": false
+        }
+      },
+      "spec_file": "screen_specs/P14-direct-conversation.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P15",
+      "name": "Direct chat / contact info",
+      "family": "chat_info",
+      "context": "conversationId; contactId; returnToConversationId",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P15-direct-chat-contact-info.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P16",
+      "name": "Shared media, files and links",
+      "family": "media_grid",
+      "context": "conversationId; chatType:direct/group/business; segment:Media/Files/Links",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P16-shared-media-files-and-links.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P17",
+      "name": "Media viewer",
+      "family": "media_stage",
+      "context": "conversationId; messageId; mediaId; mediaType:photo/video/audio; returnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P17-media-viewer.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P18",
+      "name": "Message details / receipts",
+      "family": "receipt_detail",
+      "context": "conversationId; messageId; chatType; recipientReceiptIds[]",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P18-message-details-receipts.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P19",
+      "name": "Archived chats",
+      "family": "chat_master",
+      "context": "archivedConversationIds[]; selectedConversationId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P19-archived-chats.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P20",
+      "name": "Starred messages",
+      "family": "search_list",
+      "context": "scope:global/conversation; conversationId?; starredMessageIds[]",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P20-starred-messages.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P21",
+      "name": "Add / edit contact",
+      "family": "form",
+      "context": "mode:add/edit; contactId?; draftName; draftPhone; returnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P21-add-edit-contact.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P22",
+      "name": "File preview",
+      "family": "document_preview",
+      "context": "conversationId; messageId; fileId; supported:bool",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P22-file-preview.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P23",
+      "name": "Group conversation",
+      "family": "conversation",
+      "context": "conversationId; groupId; perspective:owner/admin/member; membership:active/left/removed",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320,
+          "optionalContextWidth": 320,
+          "contextPage": "P25",
+          "contextInitiallyOpen": false
+        }
+      },
+      "spec_file": "screen_specs/P23-group-conversation.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P24",
+      "name": "Create / edit group details",
+      "family": "form",
+      "context": "mode:create/edit; groupId?; selectedMemberIds[]; groupDraft",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P24-create-edit-group-details.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P25",
+      "name": "Group info",
+      "family": "chat_info",
+      "context": "groupId; conversationId; viewerRole",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P25-group-info.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P26",
+      "name": "Group members",
+      "family": "member_list",
+      "context": "groupId; mode:browse/transfer; viewerRole; query; selectedMemberId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P26-group-members.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P27",
+      "name": "Group permissions",
+      "family": "form",
+      "context": "groupId; viewerRole; permissionsDraft",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P27-group-permissions.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P28",
+      "name": "Call details",
+      "family": "call_detail",
+      "context": "callId; conversationId?; storyId?; direction; mediaType",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_call_history_master_336_plus_detail",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_call_history_master_336_plus_detail",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P28-call-details.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P29",
+      "name": "Outgoing / ringing call",
+      "family": "call_stage",
+      "context": "sessionId; contactId or storyId; mediaType:audio/video; direction:outgoing; payerRole",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P29-outgoing-ringing-call.md",
+      "native_only_review_on_web": true
+    },
+    {
+      "id": "P30",
+      "name": "Incoming call",
+      "family": "call_stage",
+      "context": "sessionId; contactId or storyId; mediaType; direction:incoming; recipientRole",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P30-incoming-call.md",
+      "native_only_review_on_web": true
+    },
+    {
+      "id": "P31",
+      "name": "Active audio call",
+      "family": "call_stage",
+      "context": "sessionId; mediaType:audio; payerRole; callClock; connectionState",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P31-active-audio-call.md",
+      "native_only_review_on_web": true
+    },
+    {
+      "id": "P32",
+      "name": "Active video call",
+      "family": "call_stage",
+      "context": "sessionId; mediaType:video; payerRole; cameraState; mockRemotePreview",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P32-active-video-call.md",
+      "native_only_review_on_web": true
+    },
+    {
+      "id": "P33",
+      "name": "Call summary",
+      "family": "call_detail",
+      "context": "sessionId; endReason; duration; chargedCredits; sourceReturnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_call_history_master_336_plus_detail",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_call_history_master_336_plus_detail",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P33-call-summary.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P34",
+      "name": "Full-screen Story viewer",
+      "family": "story_stage",
+      "context": "storyId; mode:own/contact/business; sourceReturnTo; publicationId?; position",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 420
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 420
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "conditionalMaster": "Status master336 only for contact/own Story; no master for Business Story entered from Discover",
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 420
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "conditionalMaster": "Status master336 only for contact/own Story; no master for Business Story entered from Discover",
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/P34-full-screen-story-viewer.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P35",
+      "name": "Discover search / results",
+      "family": "discover_grid",
+      "context": "query; categoryId?; eligibleStoryIds[]; sourceReturnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 1200
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 1200
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        }
+      },
+      "spec_file": "screen_specs/P35-discover-search-results.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P36",
+      "name": "Public Business profile",
+      "family": "business_profile",
+      "context": "businessId; originatingStoryId?; viewer:self/visitor",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 1200
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 1200
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        }
+      },
+      "spec_file": "screen_specs/P36-public-business-profile.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P37",
+      "name": "Publishing hub",
+      "family": "choice_hub",
+      "context": "source:Status/Profile; draftId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P37-publishing-hub.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P38",
+      "name": "Category selection",
+      "family": "selection",
+      "context": "draftId; publicationKind:status/ad; selectedCategoryId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P38-category-selection.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P39",
+      "name": "Media library picker",
+      "family": "media_picker",
+      "context": "mode:publication/chat/profile/cover; draftId; selectedMediaType; returnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P39-media-library-picker.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P40",
+      "name": "Camera capture",
+      "family": "capture_stage",
+      "context": "mode:photo/video; mediaTarget; draftId; returnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "content": "bounded_media_stage",
+          "navigation": "immersive route hides bottom navigation; close retains source context",
+          "maxStageWidth": 640,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P40-camera-capture.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P41",
+      "name": "Photo preview / editor",
+      "family": "media_editor",
+      "context": "mediaTarget:publication/chat/profile/cover; mediaId; draftId; crop; rotation; caption",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P41-photo-preview-editor.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P42",
+      "name": "Video preview / editor",
+      "family": "media_editor",
+      "context": "mediaTarget:publication/chat; mediaId; draftId; trimStart; trimEnd; caption",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P42-video-preview-editor.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P43",
+      "name": "Audio recorder / preview",
+      "family": "audio_editor",
+      "context": "mediaTarget; draftId; recordingState; duration; coverId; caption",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P43-audio-recorder-preview.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P44",
+      "name": "Publication price review",
+      "family": "commercial_review",
+      "context": "draftId; configVersion; priceSnapshot; imageSlotState; returnAfterTopup?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P44-publication-price-review.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P45",
+      "name": "Advertisement audience targeting",
+      "family": "form",
+      "context": "draftId; geography; gender; oneInterestId",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P45-advertisement-audience-targeting.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P46",
+      "name": "Targeting location / radius",
+      "family": "map_form",
+      "context": "draftId; country; city; neighborhood?; radiusKm; locationPermission",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P46-targeting-location-radius.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P47",
+      "name": "Business conversation",
+      "family": "conversation",
+      "context": "conversationId; businessId; originatingStoryId; payerRole:customer/recipient; roomState; expiresAt",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320,
+          "optionalContextWidth": 320,
+          "contextPage": "P48",
+          "contextInitiallyOpen": false
+        }
+      },
+      "spec_file": "screen_specs/P47-business-conversation.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P48",
+      "name": "Business conversation info",
+      "family": "chat_info",
+      "context": "conversationId; originatingStoryId; businessId; roomExpiresAt; payerRole",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_master_336_plus_detail",
+          "gutter": 32,
+          "master": "Chats or contextual conversation/recipient list",
+          "detailMinWidth": 320
+        }
+      },
+      "spec_file": "screen_specs/P48-business-conversation-info.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P49",
+      "name": "My Publications",
+      "family": "publication_list",
+      "context": "publicationFilter:All/Active/Expired/Removed/Advertisements; selectedPublicationId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 1200
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 1200
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        }
+      },
+      "spec_file": "screen_specs/P49-my-publications.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P50",
+      "name": "Publication details",
+      "family": "publication_detail",
+      "context": "publicationId; sourceReturnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P50-publication-details.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P51",
+      "name": "Story viewers",
+      "family": "viewer_list",
+      "context": "publicationId; viewerPermission:contacts/aggregateOnly",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P51-story-viewers.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P52",
+      "name": "Promotion analytics",
+      "family": "analytics",
+      "context": "publicationId; period; qualifiedViews; heldViews; popularThreshold",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 1200
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 1200
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 1200
+        }
+      },
+      "spec_file": "screen_specs/P52-promotion-analytics.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P53",
+      "name": "Promotion contact activity",
+      "family": "activity_list",
+      "context": "publicationId; storyId; activityFilter?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P53-promotion-contact-activity.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P54",
+      "name": "Wallet overview",
+      "family": "wallet_overview",
+      "context": "profileId:self; balances:{credits,availableDiamonds,pendingDiamonds,frozenDiamonds,cash}",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P54-wallet-overview.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P55",
+      "name": "Balance activity",
+      "family": "ledger_list",
+      "context": "balance:Credits/Diamonds/Cash; filter; cursor?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P55-balance-activity.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P56",
+      "name": "Transaction details",
+      "family": "receipt_detail",
+      "context": "transactionId; relatedPublicationId?/sessionId?/withdrawalId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P56-transaction-details.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P57",
+      "name": "Buy Credits",
+      "family": "purchase_form",
+      "context": "creditQuantity; method:MTN/Orange; phone; interruptedAction?:typedDestination",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P57-buy-credits.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P58",
+      "name": "Payment review",
+      "family": "commercial_review",
+      "context": "paymentReference; creditQuantity; cashAmountXAF; method; phone; interruptedAction?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P58-payment-review.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P59",
+      "name": "Payment status",
+      "family": "payment_status",
+      "context": "paymentReference; status:processing/pending/failed/cancelled/confirmed; applied:bool; interruptedAction?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P59-payment-status.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P60",
+      "name": "Convert Diamonds",
+      "family": "conversion_form",
+      "context": "availableDiamonds; pendingDiamonds; frozenDiamonds; quantity; rateVersion",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P60-convert-diamonds.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P61",
+      "name": "Withdrawal form",
+      "family": "withdrawal_form",
+      "context": "withdrawalDraft; amountXAF; payoutMethod; destination; feeConfigVersion",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P61-withdrawal-form.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P62",
+      "name": "Withdrawal review",
+      "family": "commercial_review",
+      "context": "withdrawalDraftId; amount; fee; netPayout; destination; feeVersion",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P62-withdrawal-review.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P63",
+      "name": "Withdrawal history",
+      "family": "withdrawal_list",
+      "context": "filter:All/Pending/Paid or configured status; selectedRequestId?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P63-withdrawal-history.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P64",
+      "name": "Withdrawal details / tracking",
+      "family": "tracking_detail",
+      "context": "withdrawalId; status; amount; method; destination; debited; recredited",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P64-withdrawal-details-tracking.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P65",
+      "name": "Edit personal profile",
+      "family": "form",
+      "context": "profileId:self; personalDraft; phoneParts; returnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P65-edit-personal-profile.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P66",
+      "name": "Edit Business profile",
+      "family": "form",
+      "context": "businessId:self; publicBusinessDraft",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P66-edit-business-profile.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P67",
+      "name": "Settings",
+      "family": "settings_master",
+      "context": "selectedSectionId?; sourceReturnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P67-settings.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P68",
+      "name": "Privacy settings",
+      "family": "form",
+      "context": "preferences:{photoVisibility,readReceipts,audience}; returnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P68-privacy-settings.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P69",
+      "name": "Status audience",
+      "family": "selection",
+      "context": "audience:MutualContacts/Except/OnlySelected; selectedContactIds[]; returnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P69-status-audience.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P70",
+      "name": "Notification settings",
+      "family": "form",
+      "context": "notificationPreferences; mockPermissionStatus",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P70-notification-settings.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P71",
+      "name": "Appearance",
+      "family": "appearance",
+      "context": "theme:light/dark/system; textScale",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P71-appearance.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P72",
+      "name": "Permissions / contact sync",
+      "family": "permission_list",
+      "context": "permissions:{contacts,camera,mic,media,location,notifications}; syncState",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P72-permissions-contact-sync.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P73",
+      "name": "Blocked accounts",
+      "family": "account_list",
+      "context": "blockedAccountIds[]; query; selectedTarget?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P73-blocked-accounts.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P74",
+      "name": "Account settings",
+      "family": "form",
+      "context": "accountId:self; linkedProvider; personalPhone",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P74-account-settings.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P75",
+      "name": "Help / support",
+      "family": "support_list",
+      "context": "query; topicId?; supportContext?",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P75-help-support.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P76",
+      "name": "Help article",
+      "family": "reading",
+      "context": "articleId; query?; supportContext?; sourceReturnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P76-help-article.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P77",
+      "name": "About Whizpee",
+      "family": "about",
+      "context": "version; buildLabel?; sourceReturnTo",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32
+        }
+      },
+      "spec_file": "screen_specs/P77-about-whizpee.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P78",
+      "name": "Delete-account explanation",
+      "family": "destructive_form",
+      "context": "accountId:self; acknowledged:bool",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76_plus_profile_settings_master_336_plus_detail",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P78-delete-account-explanation.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P79",
+      "name": "Report form",
+      "family": "report_form",
+      "context": "targetType:Story/account/chat; targetId; storyId?/conversationId?; reason; explanation",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P79-report-form.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "P80",
+      "name": "Account restriction notice",
+      "family": "restriction",
+      "context": "restrictionType:warning/suspension/ban; reason?; expiresAt?; supportContext",
+      "modes": {
+        "compact": {
+          "min": 0,
+          "max": 599,
+          "shell": "bottom_navigation_if_route_permits",
+          "gutter": 20,
+          "contentMaxWidth": 640
+        },
+        "medium": {
+          "min": 600,
+          "max": 1023,
+          "shell": "icon_rail_76_and_single_active_pane",
+          "gutter": 24,
+          "contentMaxWidth": 640
+        },
+        "expanded": {
+          "min": 1024,
+          "max": 1439,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        },
+        "large": {
+          "min": 1440,
+          "max": null,
+          "shell": "icon_rail_76",
+          "gutter": 32,
+          "contentMaxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/P80-account-restriction-notice.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S01",
+      "name": "Phone country-code picker",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S01-phone-country-code-picker.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S02",
+      "name": "Chat-list actions",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S02-chat-list-actions.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S03",
+      "name": "Message actions",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S03-message-actions.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S04",
+      "name": "Attachment tray",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 640
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 640
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 640
+        }
+      },
+      "spec_file": "screen_specs/S04-attachment-tray.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S05",
+      "name": "Media source / photo actions",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S05-media-source-photo-actions.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S06",
+      "name": "Mute-duration chooser",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S06-mute-duration-chooser.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S07",
+      "name": "Reaction picker",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S07-reaction-picker.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S08",
+      "name": "Group member actions",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S08-group-member-actions.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S09",
+      "name": "Audio-output chooser",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S09-audio-output-chooser.md",
+      "native_only_review_on_web": true
+    },
+    {
+      "id": "S10",
+      "name": "Minimized-call overlay",
+      "family": "minimized_call_card",
+      "modes": {
+        "compact": {
+          "presentation": "persistent_call_card",
+          "maxWidth": 360,
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "nonblocking_top_right_card",
+          "maxWidth": 360
+        },
+        "expanded": {
+          "presentation": "nonblocking_top_right_card",
+          "maxWidth": 360
+        },
+        "large": {
+          "presentation": "nonblocking_top_right_card",
+          "maxWidth": 360
+        }
+      },
+      "spec_file": "screen_specs/S10-minimized-call-overlay.md",
+      "native_only_review_on_web": true
+    },
+    {
+      "id": "S11",
+      "name": "Business call preflight",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S11-business-call-preflight.md",
+      "native_only_review_on_web": true
+    },
+    {
+      "id": "S12",
+      "name": "Story options",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S12-story-options.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S13",
+      "name": "Boost explanation / options",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S13-boost-explanation-options.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S14",
+      "name": "Publication actions",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S14-publication-actions.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S15",
+      "name": "Target-area chooser",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S15-target-area-chooser.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S16",
+      "name": "Business contact selector",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S16-business-contact-selector.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S17",
+      "name": "Insufficient Credits",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S17-insufficient-credits.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S18",
+      "name": "Payment-method chooser",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S18-payment-method-chooser.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S19",
+      "name": "Diamond conversion review",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S19-diamond-conversion-review.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S20",
+      "name": "Payout-method chooser",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S20-payout-method-chooser.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "S21",
+      "name": "Private-photo visibility",
+      "family": "bottom_sheet",
+      "modes": {
+        "compact": {
+          "presentation": "bottom_sheet",
+          "maxWidth": "viewport",
+          "maxHeight": "90vh"
+        },
+        "medium": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "expanded": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        },
+        "large": {
+          "presentation": "centered_sheet",
+          "maxWidth": 480
+        }
+      },
+      "spec_file": "screen_specs/S21-private-photo-visibility.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D01",
+      "name": "Discard unsaved changes",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D01-discard-unsaved-changes.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D02",
+      "name": "Delete message",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D02-delete-message.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D03",
+      "name": "Delete conversation",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D03-delete-conversation.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D04",
+      "name": "Clear conversation history",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D04-clear-conversation-history.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D05",
+      "name": "Delete device contact",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D05-delete-device-contact.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D06",
+      "name": "Leave group",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D06-leave-group.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D07",
+      "name": "Remove group member",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D07-remove-group-member.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D08",
+      "name": "Promote member to admin",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D08-promote-member-to-admin.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D09",
+      "name": "Demote group admin",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D09-demote-group-admin.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D10",
+      "name": "Transfer group ownership",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D10-transfer-group-ownership.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D11",
+      "name": "Delete call-history entry",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D11-delete-call-history-entry.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D12",
+      "name": "Low paid-call balance warning",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D12-low-paid-call-balance-warning.md",
+      "native_only_review_on_web": true
+    },
+    {
+      "id": "D13",
+      "name": "Delete own publication",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D13-delete-own-publication.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D14",
+      "name": "Price / configuration changed",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D14-price-configuration-changed.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D15",
+      "name": "Image-slot limit reached",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D15-image-slot-limit-reached.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D16",
+      "name": "Open / reopen paid Business room",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D16-open-reopen-paid-business-room.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D17",
+      "name": "Business interaction limit reached",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D17-business-interaction-limit-reached.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D18",
+      "name": "Cancel in-progress payment",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D18-cancel-in-progress-payment.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D19",
+      "name": "Sign out",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D19-sign-out.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D20",
+      "name": "Final account deletion",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D20-final-account-deletion.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D21",
+      "name": "Block account / Business",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D21-block-account-business.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D22",
+      "name": "Unblock account / Business",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D22-unblock-account-business.md",
+      "native_only_review_on_web": false
+    },
+    {
+      "id": "D23",
+      "name": "Permission recovery guidance",
+      "family": "confirmation_dialog",
+      "modes": {
+        "compact": {
+          "presentation": "centered_dialog",
+          "maxWidth": "viewport_minus_48",
+          "maxHeight": "85vh"
+        },
+        "medium": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "expanded": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        },
+        "large": {
+          "presentation": "centered_dialog",
+          "maxWidth": 420
+        }
+      },
+      "spec_file": "screen_specs/D23-permission-recovery-guidance.md",
+      "native_only_review_on_web": false
+    }
+  ],
+  "widthClassAlias": {
+    "large": "wide in design_tokens.json"
+  }
+}

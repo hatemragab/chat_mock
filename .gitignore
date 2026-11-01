@@ -1,0 +1,29 @@
+# Local workstation and editor files
+.DS_Store
+._*
+.idea/
+*.swp
+*.swo
+*~
+*.log
+
+# Private environment and signing configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+local.properties
+key.properties
+
+# Flutter caches, generated output and coverage
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+coverage/

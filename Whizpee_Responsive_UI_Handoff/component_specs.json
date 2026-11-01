@@ -1,0 +1,4534 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Whizpee 2.0",
+  "deliverable": "Responsive UI component specification",
+  "approved_direction": "A \u2014 Compact icon rail",
+  "units": {
+    "geometry": "logical pixels (Flutter dp / browser CSS px at100% zoom)",
+    "typography": "logical pixels; line heights are absolute logical pixels",
+    "duration": "milliseconds unless stated",
+    "opacity": "0 through1"
+  },
+  "token_reference_convention": "color.* references resolve within the active light/dark theme in design_tokens.json; typography.fontFamily.preferred resolves to the bundled family when present, else the documented system stack.",
+  "global_rules": {
+    "preferred_font": "Whizpee Roboto (bundled Roboto400/500/700, Apache2); use exact font assets and weights. Inter is only a future optional font swap and is not the reference font.",
+    "text_secondary_light": "#5D6F65; legacy #728179 retained for decorative source compatibility, not required readable small text.",
+    "spacing_scale": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      32,
+      40,
+      48
+    ],
+    "breakpoints": {
+      "compact": "0\u2013599.999",
+      "medium": "600\u20131023.999",
+      "expanded": "1024\u20131439.999",
+      "large": "1440+"
+    },
+    "shared_controls": "Normalize legacy40px composer and emoji actions to44px accessible touch targets; visual glyphs keep20px sizing.",
+    "text_scaling": "All stated heights are minimums when text is involved. Allow growth/scrolling at larger text scale; keep navigation, submit, close and call end controls reachable.",
+    "focus": "3px color.brand outline, 3px offset; never remove without replacement.",
+    "pointer": "Hover feedback uses 6% foreground overlay; pressed uses 12%.",
+    "reduced_motion": "Suppress decorative transforms/pulse; retain direct progress indication.",
+    "state_ownership": "Controlled widgets receive typed values/actions; shared session state survives route/pane changes.",
+    "web_capabilities": "Call history and visual review states remain; ordinary browser start/answer and video-compression functions unavailable.",
+    "privacy": "Business room identity derives from originating Story; private phone/avatar never substitute for public identity.",
+    "specification_status": "Normative handoff contract, including responsive refinements; not a claim that every original HTML pixel already matched these rules.",
+    "font_weights": {
+      "regular": 400,
+      "medium": 500,
+      "bold": 700,
+      "mapping": "Legacy550 maps to500; legacy600/650/750 map to700. Avoid synthetic semibold."
+    }
+  },
+  "components": [
+    {
+      "id": "C01",
+      "name": "AdaptiveScaffold",
+      "flutter_widget": "WhizpeeAdaptiveScaffold",
+      "role": "application layout",
+      "anatomy": [
+        "Safe area",
+        "optional navigation rail",
+        "optional list pane",
+        "active content pane",
+        "optional context pane",
+        "overlay host"
+      ],
+      "dimensions": {
+        "width": "viewport",
+        "height": "available viewport after host safe areas",
+        "rail_width": 76,
+        "list_pane_width": 336,
+        "context_pane_width": 320,
+        "context_pane_min_viewport": 1440,
+        "content_max_width": 1200,
+        "form_max_width": 640,
+        "divider_width": 1
+      },
+      "padding": {
+        "compact_content_inline": 20,
+        "medium_content_inline": 24,
+        "expanded_content_inline": 32,
+        "full_bleed_conversation": 0,
+        "page_bottom": 24
+      },
+      "gap": {
+        "section": 24,
+        "card": 16,
+        "pane": 0
+      },
+      "typography": {
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 21,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "single": [
+          "P06",
+          "P07",
+          "P08",
+          "P09"
+        ],
+        "collection": [
+          "P01",
+          "P02",
+          "P03",
+          "P04",
+          "P49"
+        ],
+        "list_detail": [
+          "P14",
+          "P23",
+          "P47"
+        ],
+        "bounded_form": [
+          "P21",
+          "P24",
+          "P44",
+          "P57",
+          "P60",
+          "P61",
+          "P65",
+          "P66"
+        ],
+        "immersive": [
+          "P17",
+          "P29",
+          "P30",
+          "P31",
+          "P32",
+          "P34"
+        ]
+      },
+      "states": {
+        "default": {
+          "background": "color.background"
+        },
+        "offline": {
+          "banner": "C35",
+          "preserve_drafts": true
+        },
+        "restricted": {
+          "notice_surface": "P80",
+          "allowed_navigation_remains_visible": true
+        }
+      },
+      "responsive": {
+        "compact": "Below 600: single content pane; show C03 on main tabs only.",
+        "medium": "600 through 1023: C04 plus single active pane; no forced narrow chat split.",
+        "expanded": "1024 through 1439: C04 plus 336px list and remaining detail width where applicable.",
+        "large": "1440 and above: context pane may open at 320px; closed by default unless requested. Collapse context before violating detail minimum width."
+      },
+      "interaction": {
+        "scrolling": "Each visible list/detail/context pane owns its scroll position; app header and composer remain fixed within their pane.",
+        "navigation": "Keep selected IDs and drafts when panes collapse or expand.",
+        "keyboard": "Rail precedes list, active pane, then context in focus order; modal focus supersedes all panes."
+      },
+      "accessibility": {
+        "semantic_role": "application layout",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P01",
+        "P04",
+        "P14",
+        "P65"
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "AppHeader",
+      "flutter_widget": "WhizpeeAppHeader",
+      "role": "toolbar",
+      "anatomy": [
+        "44px leading slot",
+        "title/subtitle flexible column",
+        "44px trailing action slots",
+        "optional bottom divider"
+      ],
+      "dimensions": {
+        "height_min": 56,
+        "subtitle_height_min": 72,
+        "chat_height_min": 58,
+        "leading_slot": 44,
+        "action_slot": 44,
+        "icon": 20,
+        "icon_stroke": 1.7,
+        "list_pane_header_height_min": 64
+      },
+      "padding": {
+        "inline": 16,
+        "block": 6,
+        "leading_action_edge_offset": -12,
+        "trailing_action_edge_offset": -12
+      },
+      "gap": {
+        "leading_to_title": 8,
+        "title_to_subtitle": 2,
+        "between_actions": 0
+      },
+      "typography": {
+        "title": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 20,
+          "line_height": 26,
+          "font_weight": 700,
+          "letter_spacing": -0.4
+        },
+        "subtitle": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "standard": {
+          "height_min": 56
+        },
+        "subtitle": {
+          "height_min": 72
+        },
+        "chat": {
+          "height_min": 58,
+          "avatar": 40,
+          "name": {
+            "font_family": "typography.fontFamily.preferred",
+            "font_size": 15,
+            "line_height": 20,
+            "font_weight": 700,
+            "letter_spacing": 0
+          },
+          "status": {
+            "font_family": "typography.fontFamily.preferred",
+            "font_size": 11,
+            "line_height": 16,
+            "font_weight": 400,
+            "letter_spacing": 0
+          }
+        },
+        "list_pane": {
+          "height_min": 64,
+          "title": "typography.styles.pageTitle",
+          "role": "top-level desktop list title"
+        }
+      },
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "long_title": {
+          "max_lines": 1,
+          "overflow": "ellipsis",
+          "flexible_title": true
+        },
+        "loading": {
+          "preserve_height": true,
+          "trailing_progress_size": 20
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Leading back invokes contextual navigation; each action uses its supplied handler.",
+        "keyboard": "Tab visits leading control then trailing controls; Enter/Space activates controls. Header itself is not focusable.",
+        "position": "Sticky at the top of its own content pane."
+      },
+      "accessibility": {
+        "semantic_role": "toolbar",
+        "title": "Expose as page heading.",
+        "icon_buttons": "Give each icon a specific action label.",
+        "text_scaling": "Height is minimum; grow when title line height requires it without overlaying actions."
+      },
+      "sample_surfaces": [
+        "P07",
+        "P14",
+        "P25",
+        "P54",
+        "P65"
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "BottomNavigation",
+      "flutter_widget": "WhizpeeBottomNavigation",
+      "role": "tab list",
+      "anatomy": [
+        "Five equal slots",
+        "24px icon",
+        "selected soft pill",
+        "label",
+        "optional unread badge"
+      ],
+      "dimensions": {
+        "height_min": 64,
+        "item_count": 5,
+        "icon": 20,
+        "item_min_touch_height": 48,
+        "selected_pill_width": 48,
+        "selected_pill_height": 28,
+        "badge_min_size": 14
+      },
+      "padding": {
+        "inline": 4,
+        "top": 4,
+        "bottom": 8,
+        "safe_area_bottom": "add host inset"
+      },
+      "gap": {
+        "icon_to_label": 4
+      },
+      "typography": {
+        "label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 14,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "selected_label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 14,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "badge": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 8,
+          "line_height": 10,
+          "font_weight": 700,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.background",
+        "inactive": "color.text.secondary",
+        "active": "color.brand",
+        "selected_fill": "color.brandSoft",
+        "divider": "color.border"
+      },
+      "variants": {
+        "order": [
+          "Discover/P04",
+          "Chats/P01",
+          "Calls/P02",
+          "Status/P03",
+          "Profile/P05"
+        ]
+      },
+      "states": {
+        "default": {
+          "foreground": "color.text.secondary"
+        },
+        "selected": {
+          "foreground": "color.brand",
+          "icon_background": "color.brandSoft"
+        },
+        "unread": {
+          "badge_fill": "color.brand",
+          "badge_label": "color.onBrand"
+        },
+        "web_calls": {
+          "calls_tab": "history available",
+          "start_answer_actions": "unavailable"
+        }
+      },
+      "responsive": {
+        "compact": "Shown below 600 on root tabs.",
+        "medium": "Replaced by C04 at 600.",
+        "expanded": "Not shown."
+      },
+      "interaction": {
+        "pointer": "Select tab and restore its previous inner context when appropriate.",
+        "keyboard": "Arrow Left/Right moves selected tab; Home/End first/last; Enter/Space activates."
+      },
+      "accessibility": {
+        "semantic_role": "tablist",
+        "selected": "Expose selected destination.",
+        "badges": "Announce unread count once with the Chats tab label."
+      },
+      "sample_surfaces": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05"
+      ]
+    },
+    {
+      "id": "C04",
+      "name": "NavigationRail",
+      "flutter_widget": "WhizpeeNavigationRail",
+      "role": "navigation",
+      "anatomy": [
+        "Brand mark",
+        "five icon destinations",
+        "spacer",
+        "Settings",
+        "Appearance",
+        "profile avatar"
+      ],
+      "dimensions": {
+        "width": 76,
+        "item_touch_width": 44,
+        "item_touch_height": 44,
+        "icon": 20,
+        "brand_mark": 32,
+        "avatar": 32,
+        "tooltip_max_width": 200
+      },
+      "padding": {
+        "inline": 16,
+        "top": 16,
+        "bottom": 16
+      },
+      "gap": {
+        "items": 12,
+        "brand_to_items": 20,
+        "utility_items": 12
+      },
+      "typography": {
+        "tooltip": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 16,
+          "font_weight": 500,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.canvas",
+        "active": "color.brand",
+        "selected_fill": "color.brandSoft",
+        "inactive": "color.text.secondary",
+        "divider": "color.border"
+      },
+      "variants": {
+        "approved_direction": "A \u2014 Compact icon rail",
+        "destinations": [
+          "Discover",
+          "Chats",
+          "Calls",
+          "Status",
+          "Profile"
+        ]
+      },
+      "states": {
+        "default": {
+          "fill": "transparent",
+          "foreground": "color.text.secondary"
+        },
+        "hover": {
+          "fill": "color.surface",
+          "tooltip_delay_ms": 500
+        },
+        "selected": {
+          "fill": "color.brandSoft",
+          "foreground": "color.brand"
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        }
+      },
+      "responsive": {
+        "compact": "Hidden below600; use C03.",
+        "medium": "Visible600\u20131023 with one content pane.",
+        "expanded": "Visible1024+ with list/detail where appropriate."
+      },
+      "interaction": {
+        "pointer": "Click destination; hover reveals its label.",
+        "keyboard": "Tab to each button; Enter/Space activates; focused item exposes the same text label as hover."
+      },
+      "accessibility": {
+        "semantic_role": "navigation",
+        "labels": "Every icon has visible-on-focus tooltip and semantic destination name. Do not rely on icon recognition alone."
+      },
+      "sample_surfaces": [
+        "P01",
+        "P03",
+        "P04",
+        "P05"
+      ]
+    },
+    {
+      "id": "C05",
+      "name": "ActionButton",
+      "flutter_widget": "WhizpeeActionButton",
+      "role": "button",
+      "anatomy": [
+        "Optional20px icon",
+        "label",
+        "optional spinner"
+      ],
+      "dimensions": {
+        "height_min": 44,
+        "icon": 18,
+        "spinner": 18,
+        "radius": 9,
+        "width": "intrinsic or full parent"
+      },
+      "padding": {
+        "inline": 16,
+        "block": 12
+      },
+      "gap": {
+        "icon_to_label": 8
+      },
+      "typography": {
+        "label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 13,
+          "line_height": 20,
+          "font_weight": 700,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "primary_fill": "color.brand",
+        "primary_label": "color.onBrand",
+        "secondary_fill": "color.brandSoft",
+        "secondary_label": "color.brand",
+        "danger_fill": "color.danger",
+        "danger_label": "color.onDanger"
+      },
+      "variants": {
+        "primary": {
+          "border_width": 0
+        },
+        "secondary": {
+          "border_width": 0
+        },
+        "ghost": {
+          "fill": "transparent",
+          "border_width": 1
+        },
+        "danger": {
+          "border_width": 0
+        },
+        "full_width": {
+          "width": "100%"
+        }
+      },
+      "states": {
+        "default": {
+          "background": "color.brand",
+          "foreground": "color.onBrand",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "color.brand",
+          "foreground": "color.onBrand",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "color.brand",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "loading": {
+          "show_spinner": true,
+          "spinner_size": 18,
+          "preserve_button_width": true,
+          "prevent_duplicate_submit": true
+        },
+        "success": {
+          "icon": "check",
+          "retain_label_until_host_navigation": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Single activation; disable repeated submission while busy.",
+        "keyboard": "Enter/Space invokes action. In forms only the primary submit has submit behavior."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P07",
+        "P44",
+        "P58",
+        "P62"
+      ]
+    },
+    {
+      "id": "C06",
+      "name": "IconButton",
+      "flutter_widget": "WhizpeeIconButton",
+      "role": "button",
+      "anatomy": [
+        "Touch target",
+        "centered icon",
+        "optional badge"
+      ],
+      "dimensions": {
+        "touch_width": 44,
+        "touch_height": 44,
+        "icon": 20,
+        "stroke": 1.7,
+        "radius": 12
+      },
+      "padding": {
+        "all": 12
+      },
+      "gap": {
+        "none": 0
+      },
+      "typography": {
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 21,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "normal": {
+          "shape": "rounded_rect"
+        },
+        "composer_action": {
+          "touch": 44,
+          "radius": 22
+        },
+        "destructive": {
+          "foreground": "color.danger"
+        }
+      },
+      "states": {
+        "default": {
+          "background": "transparent",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "transparent",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "transparent",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "selected": {
+          "foreground": "color.brand",
+          "background": "color.brandSoft"
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Click invokes one specific action.",
+        "keyboard": "Enter/Space activates; focus ring visible."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "label": "Required specific action label; icon alone has no separate accessible text."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P25",
+        "P34",
+        "S03"
+      ]
+    },
+    {
+      "id": "C07",
+      "name": "FormField",
+      "flutter_widget": "WhizpeeFormField",
+      "role": "textbox",
+      "anatomy": [
+        "Label",
+        "48px control",
+        "optional prefix/suffix",
+        "helper or validation text"
+      ],
+      "dimensions": {
+        "control_height_min": 48,
+        "radius": 9,
+        "border_width": 1,
+        "textarea_height_min": 96,
+        "helper_height_min": 16
+      },
+      "padding": {
+        "control_inline": 12,
+        "control_block": 12
+      },
+      "gap": {
+        "label_to_control": 8,
+        "control_to_helper": 4,
+        "next_field": 20
+      },
+      "typography": {
+        "label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 16,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "value": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "helper": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "text": {},
+        "email": {
+          "keyboard": "email"
+        },
+        "numeric": {
+          "keyboard": "decimal"
+        },
+        "textarea": {
+          "min_lines": 3
+        },
+        "select": {
+          "trailing_icon": 20
+        }
+      },
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "color.surface",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "focused": {
+          "border_color": "color.brand",
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "error": {
+          "border_color": "color.danger",
+          "helper_color": "color.danger",
+          "show_error_text": true
+        },
+        "read_only": {
+          "accepts_text_input": false,
+          "selectable_value": true
+        },
+        "loading": {
+          "trailing_spinner": 18,
+          "retain_input": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Focus on control; selection and clipboard supported.",
+        "keyboard": "Native text editing, Tab traversal; Enter submits single-line forms only when configured.",
+        "validation": "Validate on submit and after first touched invalid field; retain input on failure."
+      },
+      "accessibility": {
+        "semantic_role": "textbox",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P07",
+        "P21",
+        "P24",
+        "P65",
+        "P66"
+      ]
+    },
+    {
+      "id": "C08",
+      "name": "PhoneNumberField",
+      "flutter_widget": "WhizpeePhoneNumberField",
+      "role": "group",
+      "anatomy": [
+        "Label",
+        "country-prefix button",
+        "1px separator",
+        "local phone textbox",
+        "validation message"
+      ],
+      "dimensions": {
+        "height_min": 48,
+        "country_slot_min_width": 104,
+        "country_slot_max_width": 104,
+        "separator_height": 24,
+        "border_width": 1,
+        "radius": 9
+      },
+      "padding": {
+        "prefix_inline": 12,
+        "input_inline": 12,
+        "block": 12
+      },
+      "gap": {
+        "prefix_to_chevron": 6,
+        "label_to_control": 8,
+        "control_to_error": 4
+      },
+      "typography": {
+        "label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 16,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "prefix": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "number": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "onboarding": [
+          "P07"
+        ],
+        "profile_edit": [
+          "P65"
+        ],
+        "payment": "Uses provider-specific international value where required."
+      },
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "color.surface",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "country_picker_open": {
+          "overlay": "S01",
+          "selected_prefix_visible": true
+        },
+        "invalid": {
+          "border_color": "color.danger",
+          "message": "Enter a valid phone number."
+        },
+        "international_paste": {
+          "accept_prefixes": [
+            "+",
+            "00"
+          ],
+          "split_into_prefix_and_local": true,
+          "duplicate_prefix": false
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Country button opens S01; number area edits local portion.",
+        "keyboard": "Two focus stops: country button then local-number field; Enter/Space on prefix opens picker.",
+        "value": "Store one full international value in model; changing prefix does not concatenate a second prefix."
+      },
+      "accessibility": {
+        "semantic_role": "group",
+        "group_label": "Phone number",
+        "prefix_label": "Country calling code",
+        "input_label": "Local phone number",
+        "direction": "Phone value is always left-to-right."
+      },
+      "sample_surfaces": [
+        "P07",
+        "P65",
+        "S01"
+      ]
+    },
+    {
+      "id": "C09",
+      "name": "SearchField",
+      "flutter_widget": "WhizpeeSearchField",
+      "role": "searchbox",
+      "anatomy": [
+        "20px search icon",
+        "query",
+        "clear button"
+      ],
+      "dimensions": {
+        "height_min": 44,
+        "radius": 22,
+        "search_icon": 18,
+        "clear_touch": 44
+      },
+      "padding": {
+        "inline": 12,
+        "block": 10
+      },
+      "gap": {
+        "icon_to_query": 8
+      },
+      "typography": {
+        "value": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "placeholder": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.canvas",
+        "foreground": "color.text.primary",
+        "placeholder": "color.text.secondary"
+      },
+      "variants": {
+        "global": {},
+        "conversation": {},
+        "members": {},
+        "countries": {}
+      },
+      "states": {
+        "default": {
+          "background": "color.canvas",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "color.canvas",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "color.canvas",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "empty": {
+          "clear_visible": false
+        },
+        "query": {
+          "clear_visible": true
+        },
+        "no_results": {
+          "content_state": "C35",
+          "retain_query": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Focus search; clear removes query and restores unfiltered list.",
+        "keyboard": "Enter applies search; Escape clears suggestions before leaving page. Query preserved when opening a result and returning."
+      },
+      "accessibility": {
+        "semantic_role": "searchbox",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P01",
+        "P12",
+        "P13",
+        "P26",
+        "P35",
+        "S01"
+      ]
+    },
+    {
+      "id": "C10",
+      "name": "FilterChip",
+      "flutter_widget": "WhizpeeFilterChip",
+      "role": "toggle button",
+      "anatomy": [
+        "Label",
+        "optional count"
+      ],
+      "dimensions": {
+        "height_min": 34,
+        "touch_height_min": 44,
+        "radius": 20,
+        "border_width": 1
+      },
+      "padding": {
+        "inline": 12,
+        "block": 7
+      },
+      "gap": {
+        "chips": 8
+      },
+      "typography": {
+        "label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 16,
+          "font_weight": 500,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "inactive_fill": "transparent",
+        "inactive_text": "color.text.secondary",
+        "active_fill": "color.brandSoft",
+        "active_text": "color.brand"
+      },
+      "variants": {
+        "single_select": {
+          "one_selected": true
+        },
+        "multi_select": {
+          "used_by": "interest selection"
+        },
+        "scrollable_row": {
+          "wrap": false
+        }
+      },
+      "states": {
+        "default": {
+          "background": "transparent",
+          "foreground": "color.text.secondary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "transparent",
+          "foreground": "color.text.secondary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "transparent",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "selected": {
+          "background": "color.brandSoft",
+          "foreground": "color.brand",
+          "border_width": 0
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Toggle filter and update content in place.",
+        "keyboard": "Enter/Space toggles; expose pressed state."
+      },
+      "accessibility": {
+        "semantic_role": "toggle button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P01",
+        "P02",
+        "P08",
+        "P35",
+        "P49",
+        "P55"
+      ]
+    },
+    {
+      "id": "C11",
+      "name": "StatusBadge",
+      "flutter_widget": "WhizpeeStatusBadge",
+      "role": "status",
+      "anatomy": [
+        "Optional12px icon",
+        "label"
+      ],
+      "dimensions": {
+        "height_min": 22,
+        "radius": 5,
+        "icon": 12
+      },
+      "padding": {
+        "inline": 7,
+        "block": 4
+      },
+      "gap": {
+        "icon_to_label": 4
+      },
+      "typography": {
+        "label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 12,
+          "font_weight": 500,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "neutral_fill": "color.canvas",
+        "neutral_label": "color.text.secondary",
+        "brand_fill": "color.brandSoft",
+        "brand_label": "color.brand",
+        "danger_label": "color.danger"
+      },
+      "variants": {
+        "neutral": {},
+        "business": {
+          "text": "Business"
+        },
+        "boosted": {
+          "text": "Boosted"
+        },
+        "sponsored": {
+          "text": "Sponsored"
+        },
+        "popular": {
+          "text": "Popular"
+        },
+        "role": [
+          "Owner",
+          "Admin",
+          "Member"
+        ],
+        "transaction_status": [
+          "Pending",
+          "In progress",
+          "Approved",
+          "Rejected",
+          "Paid"
+        ]
+      },
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "No independent action by default.",
+        "keyboard": "Not focusable unless the host explicitly makes the badge a filter."
+      },
+      "accessibility": {
+        "semantic_role": "status",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P01",
+        "P04",
+        "P26",
+        "P49",
+        "P64"
+      ]
+    },
+    {
+      "id": "C12",
+      "name": "IdentityAvatar",
+      "flutter_widget": "WhizpeeIdentityAvatar",
+      "role": "image",
+      "anatomy": [
+        "Image or initials fallback",
+        "optional online dot",
+        "optional Story ring"
+      ],
+      "dimensions": {
+        "sizes": [
+          24,
+          32,
+          40,
+          44,
+          48,
+          64,
+          88
+        ],
+        "personal_radius": "50%",
+        "business_radius": 10,
+        "online_dot": 10,
+        "online_border": 2,
+        "story_ring_width": 2,
+        "story_ring_gap": 2
+      },
+      "padding": {
+        "image": 0,
+        "initials": 0
+      },
+      "gap": {
+        "ring_to_image": 2
+      },
+      "typography": {
+        "initials": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 16,
+          "line_height": 20,
+          "font_weight": 700,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "personal": {
+          "shape": "circle"
+        },
+        "business": {
+          "shape": "rounded square",
+          "source": "originating Story cover"
+        },
+        "group": {
+          "shape": "circle"
+        },
+        "fallback": {
+          "content": "initials"
+        }
+      },
+      "states": {
+        "default": {
+          "image_fit": "cover",
+          "fallback_fill": "color.brandSoft"
+        },
+        "loading": {
+          "placeholder": "color.canvas"
+        },
+        "failed_image": {
+          "show_initials": true
+        },
+        "online": {
+          "dot": "color.success"
+        },
+        "seen_story": {
+          "ring": "color.border"
+        },
+        "unseen_story": {
+          "ring": "color.brand"
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "No action unless supplied by the host feature.",
+        "keyboard": "Reading order follows visual order."
+      },
+      "accessibility": {
+        "semantic_role": "image",
+        "label": "Use identity name only when no adjacent accessible label already names it. Decorative duplicate avatar is excluded."
+      },
+      "sample_surfaces": [
+        "P01",
+        "P14",
+        "P23",
+        "P47",
+        "P65"
+      ]
+    },
+    {
+      "id": "C13",
+      "name": "ProfilePhotoEditor",
+      "flutter_widget": "WhizpeeProfilePhotoEditor",
+      "role": "button",
+      "anatomy": [
+        "Normal-flow centered avatar",
+        "camera badge anchored to avatar bottom-right"
+      ],
+      "dimensions": {
+        "avatar": 88,
+        "badge": 28,
+        "badge_icon": 14,
+        "badge_border": 2,
+        "badge_border_color": "color.background",
+        "camera_touch_target_min": 44
+      },
+      "padding": {
+        "hero_top": 16,
+        "hero_bottom": 24
+      },
+      "gap": {
+        "avatar_to_name": 12
+      },
+      "typography": {
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 21,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "personal": {
+          "avatar_shape": "circle"
+        },
+        "business_cover": {
+          "avatar_shape": "rounded_square",
+          "radius": 12
+        }
+      },
+      "states": {
+        "default": {
+          "background": "transparent",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "transparent",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "transparent",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "empty": {
+          "icon": "profile",
+          "background": "color.canvas"
+        },
+        "uploading": {
+          "progress_overlay": true
+        },
+        "failed": {
+          "retain_previous_image": true,
+          "retry_action": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Avatar or camera area opens S05.",
+        "keyboard": "One action with label Change profile photo; Enter/Space opens source actions.",
+        "layout": "Avatar participates in column layout; only camera badge uses an overlay. It must never overlap the app bar."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P07",
+        "P24",
+        "P65",
+        "P66"
+      ]
+    },
+    {
+      "id": "C14",
+      "name": "SectionHeading",
+      "flutter_widget": "WhizpeeSectionHeading",
+      "role": "heading",
+      "anatomy": [
+        "Heading",
+        "optional trailing text action"
+      ],
+      "dimensions": {
+        "height_min": 24,
+        "action_touch_height_min": 44
+      },
+      "padding": {
+        "top": 24,
+        "bottom": 12
+      },
+      "gap": {
+        "heading_to_action": 12
+      },
+      "typography": {
+        "heading": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 700,
+          "letter_spacing": 0.1
+        },
+        "action": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 500,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {},
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Trailing action navigates or expands when supplied.",
+        "keyboard": "Heading not focusable; action is a separate named link/button."
+      },
+      "accessibility": {
+        "semantic_role": "heading",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P03",
+        "P05",
+        "P25",
+        "P54"
+      ]
+    },
+    {
+      "id": "C15",
+      "name": "SettingsRow",
+      "flutter_widget": "WhizpeeSettingsRow",
+      "role": "button",
+      "anatomy": [
+        "32px leading icon slot",
+        "title/subtitle",
+        "optional value",
+        "chevron or toggle"
+      ],
+      "dimensions": {
+        "height_min": 64,
+        "leading_slot": 32,
+        "icon": 20,
+        "chevron": 17,
+        "divider": 1,
+        "metadata_max_width": 104
+      },
+      "padding": {
+        "block": 14,
+        "inline": 0
+      },
+      "gap": {
+        "leading_to_copy": 12,
+        "title_to_subtitle": 4,
+        "copy_to_trailing": 12
+      },
+      "typography": {
+        "title": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 13,
+          "line_height": 18,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "subtitle": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "value": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {},
+      "states": {
+        "default": {
+          "background": "transparent",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "transparent",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "transparent",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "destructive": {
+          "title_color": "color.danger",
+          "icon_color": "color.danger"
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Whole row activates one route/action; if trailing toggle is independent, do not nest a button inside a button.",
+        "keyboard": "Single tab stop for navigational row; Enter/Space activates."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P05",
+        "P15",
+        "P25",
+        "P67",
+        "P74"
+      ]
+    },
+    {
+      "id": "C16",
+      "name": "ConversationRow",
+      "flutter_widget": "WhizpeeConversationRow",
+      "role": "button",
+      "anatomy": [
+        "48px avatar/Story cover",
+        "name and preview",
+        "time/unread/meta"
+      ],
+      "dimensions": {
+        "height_min": 76,
+        "avatar": 44,
+        "divider": 1,
+        "unread_badge_min": 18,
+        "preview_max_lines": 1
+      },
+      "padding": {
+        "inline": 16,
+        "block": 12
+      },
+      "gap": {
+        "avatar_to_copy": 12,
+        "title_to_preview": 4,
+        "copy_to_metadata": 8
+      },
+      "typography": {
+        "name": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "preview": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "time": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "unread_count": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 14,
+          "font_weight": 700,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "personal": {
+          "avatar": "C12.personal"
+        },
+        "group": {
+          "avatar": "C12.group"
+        },
+        "business": {
+          "avatar": "C12.business",
+          "badge": "Business",
+          "room_state": true
+        },
+        "archived": {
+          "unarchive_action": true
+        }
+      },
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "color.surface",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "selected": {
+          "background": "color.brandSoft",
+          "name_color": "color.text.primary"
+        },
+        "unread": {
+          "name_weight": 700,
+          "badge_fill": "color.brand",
+          "badge_foreground": "color.onBrand"
+        },
+        "muted": {
+          "trailing_icon": "mute"
+        },
+        "pinned": {
+          "trailing_icon": "pin"
+        },
+        "failed_send": {
+          "preview_prefix": "error",
+          "status_color": "color.danger"
+        }
+      },
+      "responsive": {
+        "compact": "Fills available page width.",
+        "medium": "Fills active list pane.",
+        "expanded": "List width336; row width336. Preview truncates before metadata."
+      },
+      "interaction": {
+        "pointer": "Click opens typed conversation context. Long press or overflow opens S02.",
+        "keyboard": "Enter opens; context-menu key opens row actions. Keep focus and selected row after returning."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P01",
+        "P19"
+      ]
+    },
+    {
+      "id": "C17",
+      "name": "ConversationLayout",
+      "flutter_widget": "WhizpeeConversationLayout",
+      "role": "region",
+      "anatomy": [
+        "C02 chat header",
+        "optional room/permission notice",
+        "scrollable messages",
+        "reply/edit bar",
+        "emoji/recording region",
+        "C21 composer"
+      ],
+      "dimensions": {
+        "header_min_height": 58,
+        "message_width": "remaining pane width",
+        "message_column_max_width": 960,
+        "composer_min_height": 66,
+        "content_min_width": 320,
+        "header_avatar": 32
+      },
+      "padding": {
+        "messages_inline_compact": 16,
+        "messages_inline_expanded": 16,
+        "messages_top": 16,
+        "messages_bottom": 20
+      },
+      "gap": {
+        "message_same_sender": 4,
+        "message_new_sender": 12,
+        "day_separator_block": 20
+      },
+      "typography": {
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 21,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "direct": [
+          "P14"
+        ],
+        "group": [
+          "P23"
+        ],
+        "business": [
+          "P47"
+        ]
+      },
+      "states": {
+        "default": {
+          "background": "color.chat.background"
+        },
+        "blocked": {
+          "composer": "read-only notice",
+          "history_visible": true
+        },
+        "permission_restricted": {
+          "composer": "admin-only notice"
+        },
+        "room_expired": {
+          "composer": "read-only room explanation",
+          "history_visible": true
+        },
+        "offline": {
+          "queue_messages": true,
+          "notice": "C35"
+        }
+      },
+      "responsive": {
+        "compact": "Full page; tab bar hidden.",
+        "medium": "Rail plus active conversation; use contextual Back to return to list.",
+        "expanded": "336px list retained beside thread.",
+        "large": "Optional320px P15/P25/P48 context pane; composer remains in thread only."
+      },
+      "interaction": {
+        "scrolling": "Messages scroll independently; preserve scroll when reading history. Auto-scroll only when already near bottom or after own send.",
+        "navigation": "Explicit roomID and optional originatingStoryID; do not reuse unrelated current identity.",
+        "keyboard": "Composer retains input focus during receipt, timer and state updates."
+      },
+      "accessibility": {
+        "semantic_role": "region",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P23",
+        "P47"
+      ]
+    },
+    {
+      "id": "C18",
+      "name": "MessageBubble",
+      "flutter_widget": "WhizpeeMessageBubble",
+      "role": "group",
+      "anatomy": [
+        "Optional group sender",
+        "optional quote",
+        "body/media",
+        "inline timestamp/receipt",
+        "optional reactions"
+      ],
+      "dimensions": {
+        "max_width": "min(65% of usable thread width,520px)",
+        "compact_max_width": "min(82% of usable thread width,520px)",
+        "radius": 11,
+        "group_start_tail_radius": 4,
+        "border_width_deleted": 1
+      },
+      "padding": {
+        "text_inline": 12,
+        "text_block": 8,
+        "media_inline": 4,
+        "media_top": 4,
+        "media_bottom": 8
+      },
+      "gap": {
+        "sender_to_body": 3,
+        "quote_to_body": 6,
+        "same_sender": 4,
+        "new_sender": 12
+      },
+      "typography": {
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "sender": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "deleted": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 13,
+          "line_height": 18,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "body_token": "typography.styles.chatBody"
+      },
+      "color_tokens": {
+        "incoming": "color.chat.incoming",
+        "outgoing": "color.chat.outgoing",
+        "text": "color.text.primary",
+        "deleted_text": "color.text.secondary",
+        "chat_canvas": "color.chat.background"
+      },
+      "variants": {
+        "incoming": {
+          "alignment": "start"
+        },
+        "outgoing": {
+          "alignment": "end"
+        },
+        "group": {
+          "sender_visible": "first bubble of sender group"
+        },
+        "system": {
+          "alignment": "center",
+          "max_width": "85%",
+          "background": "transparent"
+        },
+        "deleted": {
+          "background": "transparent",
+          "border_width": 1
+        }
+      },
+      "states": {
+        "sending": {
+          "receipt": "clock"
+        },
+        "sent": {
+          "receipt": "single check"
+        },
+        "delivered": {
+          "receipt": "double check secondary"
+        },
+        "read": {
+          "receipt": "double check brand"
+        },
+        "queued_offline": {
+          "receipt": "clock",
+          "retry_not_duplicate": true
+        },
+        "failed": {
+          "receipt": "error",
+          "retry_action": true
+        },
+        "deleted": {
+          "hide_body_and_media": true,
+          "allow_edit_react": false
+        },
+        "selected": {
+          "outline_color": "color.brand",
+          "outline_width": 2
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Long press/context menu opens S03; media opens P17 or P22; failed message offers retry.",
+        "keyboard": "Message action target is focusable; Enter opens actions; quoted source is a distinct accessible jump action.",
+        "text": "Preserve Unicode and newlines; wrap long unbroken text."
+      },
+      "accessibility": {
+        "semantic_role": "group",
+        "announcement": "Sender, message content, time and delivery state in order; do not announce each decorative receipt icon separately."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P23",
+        "P47",
+        "S03"
+      ]
+    },
+    {
+      "id": "C19",
+      "name": "MessageReceipt",
+      "flutter_widget": "WhizpeeMessageReceipt",
+      "role": "text",
+      "anatomy": [
+        "Time",
+        "optional status icon"
+      ],
+      "dimensions": {
+        "icon": 14,
+        "height_min": 14,
+        "reserved_inline_width": 64
+      },
+      "padding": {
+        "inline": 0,
+        "block": 0
+      },
+      "gap": {
+        "time_to_icon": 3
+      },
+      "typography": {
+        "time": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 14,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "time": "color.text.secondary",
+        "delivered": "color.text.secondary",
+        "read": "color.brand",
+        "failed": "color.danger"
+      },
+      "variants": {
+        "incoming": {
+          "icon_visible": false
+        },
+        "own": {
+          "icon_visible": true
+        },
+        "group": {
+          "aggregate_status": true
+        }
+      },
+      "states": {
+        "queued": {
+          "icon": "clock"
+        },
+        "sent": {
+          "icon": "check"
+        },
+        "delivered": {
+          "icon": "double_check"
+        },
+        "read": {
+          "icon": "double_check",
+          "color": "color.brand"
+        },
+        "failed": {
+          "icon": "error",
+          "color": "color.danger"
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Message details comes from S03/P18; receipt itself need not be a separate tiny target.",
+        "keyboard": "Included in message accessible description."
+      },
+      "accessibility": {
+        "semantic_role": "text",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P18",
+        "P23",
+        "P47"
+      ]
+    },
+    {
+      "id": "C20",
+      "name": "QuotedMessage",
+      "flutter_widget": "WhizpeeQuotedMessage",
+      "role": "button",
+      "anatomy": [
+        "3px leading rule",
+        "author",
+        "two-line source excerpt",
+        "optional thumbnail",
+        "close action in composer variant"
+      ],
+      "dimensions": {
+        "radius": 5,
+        "leading_rule_width": 3,
+        "preview_max_lines": 2,
+        "thumbnail": 36,
+        "composer_close_touch": 44
+      },
+      "padding": {
+        "inline": 8,
+        "block": 6
+      },
+      "gap": {
+        "author_to_excerpt": 3,
+        "excerpt_to_close": 9
+      },
+      "typography": {
+        "author": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "excerpt": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 17,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "rule": "color.brand",
+        "author": "color.brand",
+        "excerpt": "color.text.secondary"
+      },
+      "variants": {
+        "in_message": {
+          "click": "jump_to_source"
+        },
+        "reply_composer": {
+          "close": "cancel_reply"
+        },
+        "edit_composer": {
+          "label": "Editing message",
+          "close": "cancel_edit"
+        }
+      },
+      "states": {
+        "default": {
+          "source_excerpt": "retained original source text"
+        },
+        "source_unavailable": {
+          "excerpt": "Original message unavailable",
+          "jump_enabled": false
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "In-message quote jumps to source; composer close cancels mode and restores input focus.",
+        "keyboard": "Enter activates jump; cancel is a separate44px named control."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P23",
+        "P47"
+      ]
+    },
+    {
+      "id": "C21",
+      "name": "MessageComposer",
+      "flutter_widget": "WhizpeeMessageComposer",
+      "role": "form",
+      "anatomy": [
+        "Rounded input pill",
+        "emoji action",
+        "multiline input",
+        "attachment action",
+        "single circular microphone/send action"
+      ],
+      "dimensions": {
+        "pill_height_min": 48,
+        "pill_height_max": 124,
+        "pill_radius": 24,
+        "action": 44,
+        "action_radius": 22,
+        "icon": 20,
+        "text_lines_min": 1,
+        "text_lines_max": 5,
+        "input_height_min": 44,
+        "input_height_max": 120,
+        "outer_height_min": 68,
+        "outer_height_max": 144,
+        "outer_height_excludes": [
+          "reply/edit bar",
+          "emoji tray",
+          "host safe-area inset"
+        ],
+        "pill_border_width": 1,
+        "pill_padding_vertical": 1
+      },
+      "padding": {
+        "outer_inline": 12,
+        "outer_top": 8,
+        "outer_bottom": 12,
+        "pill_inline": 4,
+        "pill_block": 1,
+        "input_inline": 4,
+        "input_block": 12,
+        "safe_area_bottom": "add host inset"
+      },
+      "gap": {
+        "pill_to_action": 8
+      },
+      "typography": {
+        "input": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "placeholder": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "token": "typography.styles.chatBody"
+      },
+      "color_tokens": {
+        "canvas": "color.chat.background",
+        "pill": "color.surface",
+        "input": "color.text.primary",
+        "placeholder": "color.text.secondary",
+        "action_fill": "color.brand",
+        "action_icon": "color.onBrand"
+      },
+      "variants": {
+        "direct": {},
+        "group": {},
+        "business_active": {},
+        "restricted": {
+          "replace_input_with": "explanatory read-only notice"
+        }
+      },
+      "states": {
+        "empty": {
+          "primary_icon": "microphone"
+        },
+        "has_text": {
+          "primary_icon": "send",
+          "switch_delay_ms": 0
+        },
+        "reply": {
+          "above": "C20.reply_composer"
+        },
+        "edit": {
+          "above": "C20.edit_composer"
+        },
+        "emoji_open": {
+          "tray": "C22",
+          "keep_caret": true
+        },
+        "recording": {
+          "replacement": "C25"
+        },
+        "offline": {
+          "allow_send": true,
+          "delivery": "queue"
+        },
+        "restricted": {
+          "allow_send": false,
+          "show_reason": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Emoji toggles tray; attachment opens S04; primary action records or sends current trimmed text.",
+        "keyboard": "Enter sends, Shift+Enter inserts newline with a hardware keyboard; IME composition Enter does not send. Emoji insertion occurs at caret.",
+        "focus": "Do not recreate input/controller on every character or receipt update; restore focus after reply/edit actions."
+      },
+      "accessibility": {
+        "semantic_role": "form",
+        "input_label": "Message",
+        "send_label": "Send message",
+        "microphone_label": "Record voice message",
+        "text_scaling": "Grow beyond the normal pill124/outer144 maxima when required by increased accessibility text scale; preserve controls and scrolling."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P23",
+        "P47"
+      ]
+    },
+    {
+      "id": "C22",
+      "name": "EmojiTray",
+      "flutter_widget": "WhizpeeEmojiTray",
+      "role": "grid",
+      "anatomy": [
+        "Emoji buttons",
+        "optional close action"
+      ],
+      "dimensions": {
+        "columns_compact": 8,
+        "emoji_font_size": 22,
+        "cell_touch_min": 44,
+        "height_max": 240,
+        "scroll": "vertical"
+      },
+      "padding": {
+        "inline": 12,
+        "top": 8,
+        "bottom": 4
+      },
+      "gap": {
+        "cells": 4
+      },
+      "typography": {
+        "emoji": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 22,
+          "line_height": 28,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {},
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "color.surface",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "open": {
+          "preserve_input_caret": true
+        },
+        "closed": {
+          "removed_from_focus_order": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Select inserts emoji at retained caret.",
+        "keyboard": "Arrow keys navigate cells; Enter inserts; Escape closes and returns focus to composer."
+      },
+      "accessibility": {
+        "semantic_role": "grid",
+        "cell_label": "Use emoji accessible name; avoid announcing raw Unicode code points."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P23",
+        "P47",
+        "S07"
+      ]
+    },
+    {
+      "id": "C23",
+      "name": "ReactionPill",
+      "flutter_widget": "WhizpeeReactionPill",
+      "role": "toggle button",
+      "anatomy": [
+        "Emoji",
+        "optional count"
+      ],
+      "dimensions": {
+        "visual_height": 24,
+        "touch_height_min": 44,
+        "radius": 12,
+        "border_width": 1,
+        "emoji_font_size": 14
+      },
+      "padding": {
+        "inline": 7,
+        "block": 3
+      },
+      "gap": {
+        "emoji_to_count": 4,
+        "between_pills": 4
+      },
+      "typography": {
+        "count": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 14,
+          "font_weight": 500,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {},
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "color.surface",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "own_reaction": {
+          "background": "color.brandSoft",
+          "border_color": "color.brand"
+        },
+        "removed": {
+          "decrement_count": true,
+          "hide_if_zero": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Click toggles own reaction; expanded picker S07 offers more choices.",
+        "keyboard": "Enter/Space toggles; pressed state exposed."
+      },
+      "accessibility": {
+        "semantic_role": "toggle button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P23",
+        "P47",
+        "S07"
+      ]
+    },
+    {
+      "id": "C24",
+      "name": "MediaAttachment",
+      "flutter_widget": "WhizpeeMediaAttachment",
+      "role": "button",
+      "anatomy": [
+        "Media thumbnail or file-type icon",
+        "caption or filename",
+        "metadata",
+        "progress/status"
+      ],
+      "dimensions": {
+        "image_max_width": 320,
+        "image_aspect_ratio": "4:3",
+        "radius": 10,
+        "file_icon": 32,
+        "file_row_min_height": 64,
+        "progress_track_height": 5
+      },
+      "padding": {
+        "media": 0,
+        "metadata_inline": 10,
+        "metadata_block": 8
+      },
+      "gap": {
+        "filename_to_metadata": 4
+      },
+      "typography": {
+        "filename": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "metadata": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 14,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "caption": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "photo": {
+          "open": "P17"
+        },
+        "video": {
+          "open": "P17",
+          "play_overlay": 44
+        },
+        "audio": {
+          "play_touch": 44,
+          "waveform_height": 24
+        },
+        "document": {
+          "open": "P22"
+        },
+        "contact": {
+          "open": "P15"
+        }
+      },
+      "states": {
+        "ready": {
+          "show_content": true
+        },
+        "uploading": {
+          "progress_visible": true,
+          "cancel_action": true
+        },
+        "failed": {
+          "retry_action": true,
+          "retain_source": true
+        },
+        "unsupported": {
+          "show_metadata": true,
+          "preview_message": "Preview unavailable",
+          "simulated_open_action": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Open media/file; audio playback toggles; upload retry uses same attachment ID.",
+        "keyboard": "Enter opens; playback actions named independently."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P17",
+        "P22",
+        "P23",
+        "P47"
+      ]
+    },
+    {
+      "id": "C25",
+      "name": "VoiceRecordingBar",
+      "flutter_widget": "WhizpeeVoiceRecordingBar",
+      "role": "region",
+      "anatomy": [
+        "Recording dot",
+        "timer/waveform",
+        "cancel",
+        "lock/stop",
+        "send"
+      ],
+      "dimensions": {
+        "height_min": 64,
+        "dot": 9,
+        "control_touch": 44,
+        "waveform_height": 24
+      },
+      "padding": {
+        "inline": 10,
+        "top": 12,
+        "bottom": 18
+      },
+      "gap": {
+        "items": 8
+      },
+      "typography": {
+        "timer": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "instruction": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {},
+      "states": {
+        "recording": {
+          "dot_color": "color.danger",
+          "timer_runs": true
+        },
+        "locked": {
+          "release_pointer_does_not_send": true,
+          "stop_visible": true
+        },
+        "paused": {
+          "timer_runs": false
+        },
+        "preview": {
+          "playback": true,
+          "send_visible": true
+        },
+        "cancelled": {
+          "discard_recording": true,
+          "restore": "C21.empty"
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Mock hold/lock/cancel/stop/send actions; stop yields a preview, not immediate send.",
+        "keyboard": "All controls reachable without holding gesture; Enter/Space activates named action.",
+        "simulation": "No real microphone capture required for handoff prototype."
+      },
+      "accessibility": {
+        "semantic_role": "region",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P23",
+        "P43",
+        "P47"
+      ]
+    },
+    {
+      "id": "C26",
+      "name": "ContactMemberRow",
+      "flutter_widget": "WhizpeeContactMemberRow",
+      "role": "button",
+      "anatomy": [
+        "44px identity avatar",
+        "name/subtitle",
+        "optional role badge",
+        "selection/action trailing slot"
+      ],
+      "dimensions": {
+        "height_min": 68,
+        "avatar": 44,
+        "selection_box": 20,
+        "trailing_touch": 44,
+        "divider": 1
+      },
+      "padding": {
+        "inline": 16,
+        "block": 12
+      },
+      "gap": {
+        "avatar_to_copy": 12,
+        "title_to_subtitle": 4
+      },
+      "typography": {
+        "name": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 20,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "subtitle": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "role": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 14,
+          "font_weight": 700,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "contact": {},
+        "owner": {
+          "badge": "Owner"
+        },
+        "admin": {
+          "badge": "Admin"
+        },
+        "member": {
+          "badge": "Member"
+        },
+        "existing_member": {
+          "selectable": false,
+          "subtitle": "Already in group"
+        }
+      },
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "color.surface",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "selected": {
+          "check_fill": "color.brand",
+          "check_icon": "color.onBrand"
+        },
+        "unavailable": {
+          "selection_disabled": true,
+          "reason_visible": true
+        },
+        "management": {
+          "actions_sheet": "S08",
+          "role_aware": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Single selection opens target; multi selection toggles check; member management opens S08.",
+        "keyboard": "Space toggles multi selection; Enter opens single target."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P12",
+        "P26",
+        "P51",
+        "S08"
+      ]
+    },
+    {
+      "id": "C27",
+      "name": "RecipientPicker",
+      "flutter_widget": "WhizpeeRecipientPicker",
+      "role": "region",
+      "anatomy": [
+        "C09 search",
+        "selected chips",
+        "scrollable C26 rows",
+        "continuation footer"
+      ],
+      "dimensions": {
+        "selected_chip_height": 32,
+        "footer_min_height": 72,
+        "content_max_width": 640
+      },
+      "padding": {
+        "inline": 20,
+        "selected_top": 12,
+        "footer_all": 16
+      },
+      "gap": {
+        "selected_chips": 8,
+        "search_to_list": 12
+      },
+      "typography": {
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 21,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "single_chat": {
+          "min": 1,
+          "max": 1
+        },
+        "single_call": {
+          "min": 1,
+          "max": 1,
+          "web_start": "unavailable"
+        },
+        "create_group": {
+          "min": 1,
+          "max": "configured"
+        },
+        "add_members": {
+          "exclude_existing": true
+        },
+        "forward": {
+          "min": 1,
+          "max": "configured"
+        },
+        "story_audience": {
+          "min": 0,
+          "max": "configured"
+        }
+      },
+      "states": {
+        "empty_selection": {
+          "continue_enabled": false,
+          "except_mode": "audience permits empty exclusions"
+        },
+        "selected": {
+          "chips_visible": true,
+          "continue_enabled": true
+        },
+        "no_matches": {
+          "state": "C35.empty",
+          "retain_query": true
+        },
+        "loading": {
+          "state": "C36.skeleton"
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Select rows; remove chip removes corresponding selected ID; footer completes current mode.",
+        "keyboard": "Tab through chip remove actions and rows; Enter primary footer continues.",
+        "state": "Retain mode, originating route, and selected entity IDs until confirmed or cancelled."
+      },
+      "accessibility": {
+        "semantic_role": "region",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P12",
+        "P24",
+        "P26",
+        "P69"
+      ]
+    },
+    {
+      "id": "C28",
+      "name": "StoryCard",
+      "flutter_widget": "WhizpeeStoryCard",
+      "role": "button",
+      "anatomy": [
+        "4:5 media cover",
+        "promotion badge",
+        "Business/public identity",
+        "caption/meta"
+      ],
+      "dimensions": {
+        "cover_aspect_ratio": "4:5",
+        "radius": 12,
+        "border_width": 1,
+        "min_width_expanded": 220,
+        "thumbnail_grid_gap": 16,
+        "min_width_compact": 120
+      },
+      "padding": {
+        "caption_all": 12,
+        "badge_inset": 10
+      },
+      "gap": {
+        "title_to_meta": 4
+      },
+      "typography": {
+        "title": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "metadata": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 15,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "badge": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 9,
+          "line_height": 12,
+          "font_weight": 500,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "contact_status": {
+          "seen_ring": true
+        },
+        "boosted": {
+          "badge": "Boosted"
+        },
+        "sponsored": {
+          "badge": "Sponsored"
+        },
+        "popular": {
+          "badge": "Popular"
+        },
+        "own_publication": {
+          "actions": "S14"
+        }
+      },
+      "states": {
+        "default": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "color.surface",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "color.surface",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "media_loading": {
+          "skeleton": true
+        },
+        "media_failed": {
+          "retry_visible": true
+        },
+        "expired": {
+          "viewer_eligible": false,
+          "status_badge": "Expired"
+        },
+        "removed": {
+          "viewer_eligible": false,
+          "status_badge": "Removed"
+        }
+      },
+      "responsive": {
+        "compact": "2 equal columns;12px grid gap in narrow existing mobile cards.",
+        "medium": "Use auto-fit columns of at least220px,16px gap.",
+        "expanded": "Auto-fit minimum220px within1200px content maximum; cap at4 columns for media readability."
+      },
+      "interaction": {
+        "pointer": "Open P34 with explicit Story and source IDs.",
+        "keyboard": "Enter opens selected card; own overflow is separately named."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P03",
+        "P04",
+        "P35",
+        "P36",
+        "P49"
+      ]
+    },
+    {
+      "id": "C29",
+      "name": "StoryViewer",
+      "flutter_widget": "WhizpeeStoryViewer",
+      "role": "region",
+      "anatomy": [
+        "Segmented progress",
+        "identity/header",
+        "proportionate media stage",
+        "previous/next tap zones",
+        "playback controls",
+        "context actions"
+      ],
+      "dimensions": {
+        "max_media_width": 420,
+        "media_aspect_ratio": "9:16",
+        "progress_track_height": 3,
+        "progress_segment_gap": 4,
+        "header_height_min": 56,
+        "control_touch": 44,
+        "tap_zone_fraction": 0.25
+      },
+      "padding": {
+        "progress_inline": 12,
+        "progress_top": 8,
+        "header_inline": 12,
+        "bottom_actions": 16
+      },
+      "gap": {
+        "progress_to_header": 8
+      },
+      "typography": {
+        "name": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 13,
+          "line_height": 18,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "time": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "stage": "#07110F",
+        "overlay_text": "#FFFFFF",
+        "overlay_secondary": "#D3DDD8",
+        "progress_inactive": "rgba(255,255,255,0.30)",
+        "progress_active": "#FFFFFF"
+      },
+      "variants": {
+        "own": {
+          "viewers_or_analytics": true
+        },
+        "contact": {
+          "private_identity_rules": true
+        },
+        "business": {
+          "public_story_identity": true,
+          "contact_actions": "S16"
+        },
+        "photo": {},
+        "video": {
+          "mute": true
+        },
+        "audio": {
+          "cover_and_waveform": true
+        }
+      },
+      "states": {
+        "playing": {
+          "progress_runs": true
+        },
+        "paused": {
+          "progress_runs": false
+        },
+        "muted": {
+          "audio_enabled": false
+        },
+        "expired": {
+          "media_actions_disabled": true,
+          "show_reason": true
+        },
+        "removed": {
+          "media_actions_disabled": true,
+          "show_reason": true
+        },
+        "failed": {
+          "retry_visible": true,
+          "progress_runs": false
+        }
+      },
+      "responsive": {
+        "compact": "Immersive full page; hide root bottom tabs.",
+        "medium": "Centered proportional stage with surrounding canvas; never stretch image to window width.",
+        "expanded": "Centered max420px9:16 stage; side update list may remain visible where route composition supports it."
+      },
+      "interaction": {
+        "pointer": "Tap left/right zones prev/next; press-and-hold pauses; release resumes unless explicitly paused.",
+        "keyboard": "Left/Right previous/next; Space pauses/resumes; Escape returns to origin.",
+        "privacy": "Business contact derives from eligible originating Story; viewer identities only where permitted."
+      },
+      "accessibility": {
+        "semantic_role": "region",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P34",
+        "P51",
+        "P52"
+      ]
+    },
+    {
+      "id": "C30",
+      "name": "CallPreview",
+      "flutter_widget": "WhizpeeCallPreview",
+      "role": "region",
+      "anatomy": [
+        "Identity",
+        "call status/timer",
+        "mock remote media",
+        "self preview",
+        "mute/output/camera/minimize/end toolbar"
+      ],
+      "dimensions": {
+        "preview_max_width": 640,
+        "control_touch": 44,
+        "control_icon": 20,
+        "self_preview_width": 96,
+        "self_preview_height": 128,
+        "toolbar_min_height": 88
+      },
+      "padding": {
+        "inline": 20,
+        "top": 24,
+        "toolbar_bottom": 24
+      },
+      "gap": {
+        "controls": 16,
+        "status_to_preview": 24
+      },
+      "typography": {
+        "identity": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 24,
+          "line_height": 30,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "timer": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 16,
+          "line_height": 24,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "status": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "personal_audio": {},
+        "personal_video": {},
+        "business_payer": {
+          "rate_balance_panel": true
+        },
+        "business_recipient": {
+          "charged": false
+        }
+      },
+      "states": {
+        "ringing": {
+          "charge": 0
+        },
+        "answered": {
+          "clock_runs": true
+        },
+        "busy": {
+          "charge": 0
+        },
+        "declined": {
+          "charge": 0
+        },
+        "unanswered": {
+          "charge": 0
+        },
+        "reconnecting": {
+          "notice_visible": true
+        },
+        "minimized": {
+          "session_retained": true,
+          "overlay": "S10"
+        },
+        "ended": {
+          "summary": "P33"
+        },
+        "web_unavailable": {
+          "start_answer_enabled": false,
+          "call_history_remains": true,
+          "prototype_review_can_open_visual_mock": true
+        }
+      },
+      "responsive": {
+        "compact": "Keep all primary controls accessible at320x640; scroll secondary commercial information.",
+        "medium": "Bound preview within available pane.",
+        "expanded": "Bound mock preview to640px; do not imply actual browser calls are supported."
+      },
+      "interaction": {
+        "pointer": "Controls update mock state; repeated End is idempotent.",
+        "keyboard": "All controls individually named; Escape minimizes only if host flow permits.",
+        "billing": "Native mock Business calls charge only after answer per started60-second block; web ordinary flows expose history only."
+      },
+      "accessibility": {
+        "semantic_role": "region",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P28",
+        "P29",
+        "P30",
+        "P31",
+        "P32",
+        "P33",
+        "S09",
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "id": "C31",
+      "name": "PublicationPriceSummary",
+      "flutter_widget": "WhizpeePublicationPriceSummary",
+      "role": "group",
+      "anatomy": [
+        "Itemized rows",
+        "divider",
+        "total",
+        "balance/remaining",
+        "quota/lifetime notices",
+        "confirm action"
+      ],
+      "dimensions": {
+        "radius": 12,
+        "row_height_min": 32,
+        "divider": 1,
+        "total_row_height_min": 48,
+        "max_width": 640
+      },
+      "padding": {
+        "all": 16,
+        "total_top": 16
+      },
+      "gap": {
+        "rows": 8,
+        "notice_top": 16
+      },
+      "typography": {
+        "label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "value": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "total": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 16,
+          "line_height": 22,
+          "font_weight": 700,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "free_category": {
+          "category_fee": 0
+        },
+        "paid_category": {
+          "sample_category_fee": 5
+        },
+        "boost": {
+          "sample_fee": 50
+        },
+        "advertisement": {
+          "sample_fee": 100,
+          "sample_combined_total": 155
+        }
+      },
+      "states": {
+        "review": {
+          "confirm_enabled": "valid and sufficient Credits"
+        },
+        "configuration_changed": {
+          "dialog": "D14",
+          "requires_new_confirm": true
+        },
+        "insufficient": {
+          "sheet": "S17",
+          "preserve_draft": true
+        },
+        "slot_full": {
+          "dialog": "D15"
+        },
+        "submitting": {
+          "confirm_disabled": true,
+          "spinner_visible": true
+        },
+        "failed": {
+          "retry_preserves_draft": true
+        },
+        "success": {
+          "apply_debit_once": true
+        }
+      },
+      "responsive": {
+        "compact": "Below editor/media; full available width.",
+        "medium": "Bound640px form.",
+        "expanded": "May sit beside editor when both minimum widths fit; item row order unchanged."
+      },
+      "interaction": {
+        "pointer": "Confirm submits current reviewed terms; changed configuration invalidates previous approval.",
+        "keyboard": "Summary is readable in order; primary confirm is final focus stop."
+      },
+      "accessibility": {
+        "semantic_role": "group",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P44",
+        "D14",
+        "D15",
+        "S13",
+        "S17"
+      ]
+    },
+    {
+      "id": "C32",
+      "name": "BalanceCard",
+      "flutter_widget": "WhizpeeBalanceCard",
+      "role": "group",
+      "anatomy": [
+        "Unit label/icon",
+        "amount",
+        "availability explanation",
+        "optional action"
+      ],
+      "dimensions": {
+        "radius": 12,
+        "min_height": 148,
+        "amount_max_lines": 1,
+        "icon": 20
+      },
+      "padding": {
+        "all": 20
+      },
+      "gap": {
+        "label_to_amount": 8,
+        "amount_to_caption": 4,
+        "caption_to_action": 16
+      },
+      "typography": {
+        "label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "amount": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 34,
+          "line_height": 40,
+          "font_weight": 700,
+          "letter_spacing": -1
+        },
+        "caption": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.brandSoft",
+        "foreground": "color.brand"
+      },
+      "variants": {
+        "credits": {
+          "unit": "Credits",
+          "action": "Buy Credits"
+        },
+        "diamonds": {
+          "unit": "Diamonds",
+          "action": "Convert"
+        },
+        "cash": {
+          "unit": "XAF",
+          "action": "Withdraw"
+        }
+      },
+      "states": {
+        "available": {
+          "primary_amount": "available balance"
+        },
+        "pending": {
+          "secondary_amount": "pending, unavailable for conversion"
+        },
+        "frozen": {
+          "secondary_amount": "frozen, unavailable for conversion"
+        },
+        "loading": {
+          "preserve_card_height": true,
+          "amount_skeleton": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Action opens relevant typed balance flow; card details opens unit-specific ledger.",
+        "keyboard": "Only actionable elements focusable; amount and unit read together."
+      },
+      "accessibility": {
+        "semantic_role": "group",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P05",
+        "P54",
+        "P55",
+        "P60"
+      ]
+    },
+    {
+      "id": "C33",
+      "name": "LedgerRow",
+      "flutter_widget": "WhizpeeLedgerRow",
+      "role": "button",
+      "anatomy": [
+        "32px type icon",
+        "title/date",
+        "signed amount/unit",
+        "status"
+      ],
+      "dimensions": {
+        "height_min": 64,
+        "icon_slot": 32,
+        "icon": 20,
+        "divider": 1,
+        "amount_max_width": 128
+      },
+      "padding": {
+        "inline": 0,
+        "block": 14
+      },
+      "gap": {
+        "icon_to_copy": 12,
+        "title_to_date": 4,
+        "copy_to_amount": 12
+      },
+      "typography": {
+        "title": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 13,
+          "line_height": 18,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "date": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "amount": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 13,
+          "line_height": 18,
+          "font_weight": 700,
+          "letter_spacing": 0
+        },
+        "status": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 14,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "credit_in": {
+          "sign": "+"
+        },
+        "credit_out": {
+          "sign": "\u2212"
+        },
+        "diamond_reward": {
+          "unit": "Diamonds"
+        },
+        "conversion": {
+          "related_entries": 2
+        },
+        "cash_withdrawal": {
+          "unit": "XAF"
+        }
+      },
+      "states": {
+        "default": {
+          "background": "transparent",
+          "foreground": "color.text.primary",
+          "border_color": "color.border",
+          "border_width": 1
+        },
+        "hover": {
+          "background": "transparent",
+          "foreground": "color.text.primary",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.04
+          }
+        },
+        "focus_visible": {
+          "outline_color": "color.brand",
+          "outline_width": 3,
+          "outline_offset": 2
+        },
+        "pressed": {
+          "background": "transparent",
+          "overlay": {
+            "color": "color.text.primary",
+            "opacity": 0.08
+          }
+        },
+        "disabled": {
+          "content_opacity": 0.4,
+          "accepts_input": false,
+          "preserve_label": true
+        },
+        "pending": {
+          "status": "Pending",
+          "amount_available": false
+        },
+        "confirmed": {
+          "status": "Confirmed"
+        },
+        "failed": {
+          "status": "Failed",
+          "color": "color.danger"
+        },
+        "recredited": {
+          "status": "Recredited",
+          "apply_once": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Open P56 or P64 with transaction/request ID.",
+        "keyboard": "Enter opens details; no action initiated merely by selecting row."
+      },
+      "accessibility": {
+        "semantic_role": "button",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P55",
+        "P56",
+        "P63",
+        "P64"
+      ]
+    },
+    {
+      "id": "C34",
+      "name": "MetricCard",
+      "flutter_widget": "WhizpeeMetricCard",
+      "role": "group",
+      "anatomy": [
+        "Metric label",
+        "optional20px icon",
+        "value",
+        "caption or progress"
+      ],
+      "dimensions": {
+        "radius": 10,
+        "height_min": 112,
+        "progress_height": 5
+      },
+      "padding": {
+        "all": 16
+      },
+      "gap": {
+        "label_to_value": 8,
+        "value_to_caption": 4
+      },
+      "typography": {
+        "label": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        },
+        "value": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 24,
+          "line_height": 30,
+          "font_weight": 700,
+          "letter_spacing": -0.6
+        },
+        "caption": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 10,
+          "line_height": 15,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "unique_views": {},
+        "qualified_views": {},
+        "popular_progress": {
+          "sample_threshold": 50
+        },
+        "diamonds": {},
+        "contact_activity": {}
+      },
+      "states": {
+        "default": {
+          "background": "color.canvas"
+        },
+        "threshold_reached": {
+          "badge": "Popular",
+          "progress": 1
+        },
+        "suspicious_views": {
+          "excluded_from_qualified": true,
+          "explanation_visible": true
+        },
+        "loading": {
+          "value_skeleton": true
+        }
+      },
+      "responsive": {
+        "compact": "2 equal columns with12px gap.",
+        "medium": "2\u20133 columns with16px gap.",
+        "expanded": "Up to4 columns within1200px content maximum."
+      },
+      "interaction": {
+        "pointer": "Optional details action only; aggregate numbers do not reveal private viewer identities.",
+        "keyboard": "Labels and values read as a pair."
+      },
+      "accessibility": {
+        "semantic_role": "group",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P50",
+        "P52",
+        "P53"
+      ]
+    },
+    {
+      "id": "C35",
+      "name": "AsyncState",
+      "flutter_widget": "WhizpeeAsyncState",
+      "role": "status",
+      "anatomy": [
+        "Icon or illustration",
+        "heading",
+        "explanation",
+        "optional primary/secondary action"
+      ],
+      "dimensions": {
+        "icon": 40,
+        "content_max_width": 320,
+        "heading_max_lines": 2,
+        "action_height_min": 44
+      },
+      "padding": {
+        "inline": 24,
+        "top": 40,
+        "bottom": 32
+      },
+      "gap": {
+        "icon_to_heading": 12,
+        "heading_to_body": 8,
+        "body_to_actions": 20
+      },
+      "typography": {
+        "heading": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 19,
+          "line_height": 25,
+          "font_weight": 700,
+          "letter_spacing": -0.4
+        },
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 19,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "empty": {
+          "icon": "empty",
+          "action": "relevant create/add/search reset"
+        },
+        "error": {
+          "icon": "warning",
+          "action": "Retry"
+        },
+        "offline_banner": {
+          "layout": "horizontal",
+          "padding": 12,
+          "icon": 16
+        },
+        "success": {
+          "icon": "check"
+        },
+        "permission_denied": {
+          "action": "Continue without access or review permissions"
+        },
+        "restricted": {
+          "action": "Help/support"
+        }
+      },
+      "states": {
+        "loading": {
+          "use": "C36"
+        },
+        "empty": {
+          "show_contextual_next_action": true
+        },
+        "recoverable_error": {
+          "retain_inputs_and_query": true,
+          "retry_idempotent": true
+        },
+        "offline": {
+          "retain_navigation": true
+        },
+        "success": {
+          "announced_once": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Actions have specific effect; no generic Coming soon placeholders.",
+        "keyboard": "Status updates use polite live announcements; do not force focus away from current input."
+      },
+      "accessibility": {
+        "semantic_role": "status",
+        "errors": "Use alert only for blocking submission errors, not repeated progress ticks."
+      },
+      "sample_surfaces": [
+        "P09",
+        "P13",
+        "P19",
+        "P59",
+        "P79",
+        "P80"
+      ]
+    },
+    {
+      "id": "C36",
+      "name": "ProgressIndicator",
+      "flutter_widget": "WhizpeeProgressIndicator",
+      "role": "progressbar",
+      "anatomy": [
+        "Track/fill or spinner or skeleton"
+      ],
+      "dimensions": {
+        "linear_height": 5,
+        "linear_radius": 3,
+        "button_spinner": 18,
+        "page_spinner": 28,
+        "skeleton_radius": 8,
+        "skeleton_row_height": 72
+      },
+      "padding": {
+        "all": 0
+      },
+      "gap": {
+        "skeleton_rows": 12
+      },
+      "typography": {
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 14,
+          "line_height": 21,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "linear": {},
+        "spinner": {},
+        "list_skeleton": {
+          "rows": 4
+        },
+        "card_skeleton": {
+          "aspect_ratio": "4:5"
+        },
+        "upload": {
+          "cancel_action": true
+        }
+      },
+      "states": {
+        "determinate": {
+          "range_min": 0,
+          "range_max": 100,
+          "clamp": true
+        },
+        "indeterminate": {
+          "announce_loading_once": true
+        },
+        "reduced_motion": {
+          "pulse": false,
+          "static_placeholder": true
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Noninteractive except explicit upload cancel/retry.",
+        "keyboard": "Not focusable; progress value available to assistive technology."
+      },
+      "accessibility": {
+        "semantic_role": "progressbar",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "V001",
+        "V012",
+        "V025",
+        "V080",
+        "V097"
+      ]
+    },
+    {
+      "id": "C37",
+      "name": "ToggleRow",
+      "flutter_widget": "WhizpeeToggleRow",
+      "role": "switch",
+      "anatomy": [
+        "Title/explanation",
+        "visual switch within44px target"
+      ],
+      "dimensions": {
+        "row_height_min": 64,
+        "visual_switch_width": 40,
+        "visual_switch_height": 24,
+        "thumb": 18,
+        "target_width": 44,
+        "target_height": 44,
+        "radius": 12
+      },
+      "padding": {
+        "row_block": 12,
+        "switch_inset": 3
+      },
+      "gap": {
+        "copy_to_switch": 16,
+        "title_to_explanation": 4
+      },
+      "typography": {
+        "title": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 13,
+          "line_height": 18,
+          "font_weight": 500,
+          "letter_spacing": 0
+        },
+        "explanation": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 11,
+          "line_height": 16,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {},
+      "states": {
+        "off": {
+          "track": "color.border",
+          "thumb": "color.surface"
+        },
+        "on": {
+          "track": "color.brand",
+          "thumb": "color.onBrand"
+        },
+        "focus_visible": {
+          "outline": "color.brand",
+          "width": 3,
+          "offset": 2
+        },
+        "disabled": {
+          "opacity": 0.4,
+          "accepts_input": false
+        }
+      },
+      "responsive": {
+        "compact": "Uses available width minus the page gutters.",
+        "medium": "Preserves intrinsic geometry.",
+        "expanded": "Preserves intrinsic geometry; does not enlarge text to fill width."
+      },
+      "interaction": {
+        "pointer": "Click row or switch toggles once.",
+        "keyboard": "Space toggles; expose checked state; no double-toggle from bubbling."
+      },
+      "accessibility": {
+        "semantic_role": "switch",
+        "text_scaling": "Honor text scale; expand height or wrap instead of clipping.",
+        "contrast": "Use semantic text colors, not legacy decorative muted colors."
+      },
+      "sample_surfaces": [
+        "P27",
+        "P68",
+        "P70",
+        "P72"
+      ]
+    },
+    {
+      "id": "C38",
+      "name": "AdaptiveSheet",
+      "flutter_widget": "WhizpeeAdaptiveSheet",
+      "role": "dialog",
+      "anatomy": [
+        "Backdrop",
+        "surface",
+        "optional compact handle",
+        "title/close",
+        "scrollable content",
+        "action footer"
+      ],
+      "dimensions": {
+        "compact_width": "viewport",
+        "compact_radius_top": 21,
+        "medium_max_width": 480,
+        "expanded_max_width": 480,
+        "attachment_max_width": 640,
+        "max_height": "min(90dvh,available viewport minus32px)",
+        "handle_width": 35,
+        "handle_height": 4,
+        "close_touch": 44
+      },
+      "padding": {
+        "title_inline": 20,
+        "title_top": 16,
+        "body_inline": 20,
+        "body_top": 12,
+        "body_bottom": 12,
+        "footer_inline": 20,
+        "footer_bottom": 20
+      },
+      "gap": {
+        "handle_to_title": 12,
+        "actions": 8
+      },
+      "typography": {
+        "title": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 18,
+          "line_height": 24,
+          "font_weight": 700,
+          "letter_spacing": -0.4
+        },
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 13,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "surface": "color.surface",
+        "backdrop": "rgba(0,27,20,0.40)",
+        "border": "color.border"
+      },
+      "variants": {
+        "standard": {
+          "max_width": 480
+        },
+        "attachments_S04": {
+          "max_width": 640
+        },
+        "minimized_call_S10": {
+          "persistent_session": true
+        },
+        "context_picker": {
+          "retain_selected_value": true
+        }
+      },
+      "states": {
+        "open": {
+          "background_inert": true,
+          "focus_trapped": true
+        },
+        "submitting": {
+          "confirm_disabled": true,
+          "duplicate_submit_prevented": true
+        },
+        "validation_error": {
+          "stay_open": true,
+          "focus_first_invalid": true
+        },
+        "closed": {
+          "focus_restored_to_trigger": true
+        }
+      },
+      "responsive": {
+        "compact": "Bottom-aligned edge-to-edge sheet with top corners; include bottom safe inset.",
+        "medium": "Centered bounded480px dialog-style sheet.",
+        "expanded": "Centered bounded480px; S04 max640. Context pages P15/P25/P48 use a separate optional side pane, not an arbitrary sheet remap."
+      },
+      "interaction": {
+        "pointer": "Backdrop dismisses non-destructive chooser; explicit cancellation preserves source state.",
+        "keyboard": "Escape dismisses when permitted; Tab cycles within; initial focus on heading or first appropriate control.",
+        "scrolling": "Only body scrolls where header/footer need to remain available; never render footer outside viewport."
+      },
+      "accessibility": {
+        "semantic_role": "dialog",
+        "modal": true,
+        "labelled_by": "visible sheet title",
+        "focus_restore": true
+      },
+      "sample_surfaces": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21"
+      ]
+    },
+    {
+      "id": "C39",
+      "name": "ConfirmationDialog",
+      "flutter_widget": "WhizpeeConfirmationDialog",
+      "role": "alertdialog",
+      "anatomy": [
+        "Title",
+        "target-specific explanation",
+        "optional summary",
+        "confirm/cancel actions"
+      ],
+      "dimensions": {
+        "max_width": 420,
+        "min_viewport_margin": 24,
+        "radius": 17,
+        "max_height": "85dvh",
+        "action_height_min": 44
+      },
+      "padding": {
+        "title_inline": 20,
+        "title_top": 20,
+        "body_inline": 20,
+        "body_block": 12,
+        "footer_all": 20
+      },
+      "gap": {
+        "title_to_body": 8,
+        "actions": 8
+      },
+      "typography": {
+        "title": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 18,
+          "line_height": 24,
+          "font_weight": 700,
+          "letter_spacing": -0.4
+        },
+        "body": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 13,
+          "line_height": 20,
+          "font_weight": 400,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.surface",
+        "foreground": "color.text.primary",
+        "border": "color.border"
+      },
+      "variants": {
+        "normal": {},
+        "destructive": {
+          "confirm_color": "color.danger"
+        },
+        "commercial_terms": {
+          "review_values_before_confirm": true
+        },
+        "permission": {
+          "guidance_only_in_mock": true
+        }
+      },
+      "states": {
+        "open": {
+          "background_inert": true,
+          "focus_trapped": true
+        },
+        "confirming": {
+          "confirm_disabled": true
+        },
+        "cancelled": {
+          "no_state_mutation": true,
+          "focus_restored": true
+        },
+        "confirmed": {
+          "mutation_once": true
+        }
+      },
+      "responsive": {
+        "compact": "Viewport minus40px maximum; stack buttons when labels cannot fit.",
+        "medium": "Centered max420px.",
+        "expanded": "Centered max420px; never stretch with desktop viewport."
+      },
+      "interaction": {
+        "pointer": "Confirm acts on named entity; Cancel returns without mutation.",
+        "keyboard": "Escape cancels when no irreversible operation has started; initial focus on safe cancel for destructive actions; focus restored on close."
+      },
+      "accessibility": {
+        "semantic_role": "alertdialog",
+        "modal": true,
+        "labelled_by": "title",
+        "described_by": "consequence text",
+        "button_labels": "Use explicit verbs and target; avoid ambiguous OK."
+      },
+      "sample_surfaces": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23"
+      ]
+    },
+    {
+      "id": "C40",
+      "name": "Toast",
+      "flutter_widget": "WhizpeeToast",
+      "role": "status",
+      "anatomy": [
+        "Brief feedback",
+        "optional action"
+      ],
+      "dimensions": {
+        "height_min": 40,
+        "max_width": 400,
+        "radius": 9,
+        "display_ms": 3100,
+        "safe_margin": 16
+      },
+      "padding": {
+        "inline": 16,
+        "block": 10
+      },
+      "gap": {
+        "message_to_action": 12
+      },
+      "typography": {
+        "message": {
+          "font_family": "typography.fontFamily.preferred",
+          "font_size": 12,
+          "line_height": 18,
+          "font_weight": 500,
+          "letter_spacing": 0
+        }
+      },
+      "color_tokens": {
+        "background": "color.text.primary",
+        "foreground": "color.background"
+      },
+      "variants": {
+        "informational": {},
+        "success": {},
+        "undo": {
+          "action_touch_min": 44,
+          "duration_ms": 6000
+        }
+      },
+      "states": {
+        "visible": {
+          "pointer_events": "only on explicit action"
+        },
+        "hidden": {
+          "removed_from_a11y_tree": true
+        },
+        "replacement": {
+          "queue_policy": "replace informational duplicate; preserve actionable undo until timeout"
+        }
+      },
+      "responsive": {
+        "compact": "Above bottom navigation or composer with16px clearance.",
+        "medium": "Bottom center of active content pane.",
+        "expanded": "Bottom center of active pane; never cover rail or modal confirm."
+      },
+      "interaction": {
+        "pointer": "Only optional action is interactive; feedback never substitutes for required state UI.",
+        "keyboard": "Announce politely without stealing focus; actionable undo also available through relevant feature if focus has moved."
+      },
+      "accessibility": {
+        "semantic_role": "status",
+        "live": "polite",
+        "focus": "Do not move focus on show."
+      },
+      "sample_surfaces": [
+        "P14",
+        "P44",
+        "P65",
+        "P79"
+      ]
+    }
+  ]
+}

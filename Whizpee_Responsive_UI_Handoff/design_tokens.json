@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "Whizpee 2.0",
+  "version": "2.0-responsive",
+  "status": "implementation contract",
+  "direction": "A \u2014 Compact icon rail",
+  "language": "en",
+  "units": {
+    "dimension": "logical px (Flutter dp / browser CSS px)",
+    "fontSize": "logical px, honors platform text scale",
+    "lineHeight": "logical px",
+    "motion": "ms",
+    "opacity": "0\u20131"
+  },
+  "resolution": {
+    "theme": "Resolve color.<role> against selected color.light or color.dark mode. System resolves to host prefers-color-scheme/platformBrightness.",
+    "breakpoints": "Width is available client layout width after review toolbar framing; do not classify by user agent.",
+    "references": "Semantic paths in component_specs.json omit the active mode: color.text.primary -> color[theme].text.primary."
+  },
+  "color": {
+    "light": {
+      "brand": "#087F70",
+      "brandStrong": "#076D60",
+      "brandSoft": "#DFF3EB",
+      "onBrand": "#FFFFFF",
+      "background": "#FFFFFF",
+      "surface": "#FFFFFF",
+      "canvas": "#F2F5F3",
+      "text": {
+        "primary": "#192D28",
+        "secondary": "#5D6F65",
+        "inverse": "#FFFFFF",
+        "disabled": "#728179"
+      },
+      "decorationMuted": "#728179",
+      "border": "#E8EEEA",
+      "inputBorder": "#B7C8BF",
+      "focus": "#087F70",
+      "danger": "#B33B43",
+      "dangerSoft": "#FCE9E8",
+      "success": "#087F70",
+      "successSoft": "#DFF3EB",
+      "warning": "#806021",
+      "warningSoft": "#F7EFDB",
+      "scrim": "#001B1466",
+      "chat": {
+        "background": "#F1F6F5",
+        "incoming": "#FFFFFF",
+        "outgoing": "#DAF2ED",
+        "quote": "#CEEAE3",
+        "receipt": "#087F70"
+      },
+      "onMedia": "#FFFFFF",
+      "mediaScrim": "#001B1499",
+      "onDanger": "#FFFFFF"
+    },
+    "dark": {
+      "brand": "#64D9B8",
+      "brandStrong": "#79E5C7",
+      "brandSoft": "#163F30",
+      "onBrand": "#12211B",
+      "background": "#12211B",
+      "surface": "#192C22",
+      "canvas": "#0E1C16",
+      "text": {
+        "primary": "#E5EEE7",
+        "secondary": "#9BAD9E",
+        "inverse": "#12211B",
+        "disabled": "#9BAD9E"
+      },
+      "decorationMuted": "#9BAD9E",
+      "border": "#293C2E",
+      "inputBorder": "#5B7364",
+      "focus": "#64D9B8",
+      "danger": "#FF8A91",
+      "dangerSoft": "#42292A",
+      "success": "#64D9B8",
+      "successSoft": "#163F30",
+      "warning": "#E1C278",
+      "warningSoft": "#3C3420",
+      "scrim": "#000D0999",
+      "chat": {
+        "background": "#101F20",
+        "incoming": "#203333",
+        "outgoing": "#14514E",
+        "quote": "#1F625B",
+        "receipt": "#64D9B8"
+      },
+      "onMedia": "#FFFFFF",
+      "mediaScrim": "#001B14B3",
+      "onDanger": "#12211B"
+    }
+  },
+  "spacing": {
+    "0": 0,
+    "2": 2,
+    "4": 4,
+    "8": 8,
+    "12": 12,
+    "16": 16,
+    "20": 20,
+    "24": 24,
+    "32": 32,
+    "40": 40,
+    "48": 48,
+    "64": 64
+  },
+  "typography": {
+    "fontFamily": {
+      "preferred": "Whizpee Roboto",
+      "family": "Roboto",
+      "fallback": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "sans-serif"
+      ],
+      "assetStatus": "Bundled Roboto Regular400, Medium500 and Bold700; Apache2 license. Inter is an optional future design-system swap and is not used by this handoff.",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "monospace": [
+        "ui-monospace",
+        "SFMono-Regular",
+        "Consolas",
+        "monospace"
+      ]
+    },
+    "styles": {
+      "display": {
+        "fontSize": 32,
+        "lineHeight": 40,
+        "fontWeight": 700,
+        "letterSpacing": -0.8
+      },
+      "pageTitle": {
+        "fontSize": 24,
+        "lineHeight": 32,
+        "fontWeight": 700,
+        "letterSpacing": -0.6
+      },
+      "appBarTitle": {
+        "fontSize": 20,
+        "lineHeight": 26,
+        "fontWeight": 700,
+        "letterSpacing": -0.4
+      },
+      "sectionTitle": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 700,
+        "letterSpacing": -0.2
+      },
+      "body": {
+        "fontSize": 14,
+        "lineHeight": 21,
+        "fontWeight": 400,
+        "letterSpacing": 0
+      },
+      "bodyStrong": {
+        "fontSize": 14,
+        "lineHeight": 21,
+        "fontWeight": 700,
+        "letterSpacing": 0
+      },
+      "label": {
+        "fontSize": 12,
+        "lineHeight": 18,
+        "fontWeight": 500,
+        "letterSpacing": 0
+      },
+      "caption": {
+        "fontSize": 11,
+        "lineHeight": 16,
+        "fontWeight": 400,
+        "letterSpacing": 0
+      },
+      "button": {
+        "fontSize": 13,
+        "lineHeight": 20,
+        "fontWeight": 700,
+        "letterSpacing": 0
+      },
+      "navigationLabel": {
+        "fontSize": 10,
+        "lineHeight": 14,
+        "fontWeight": 500,
+        "letterSpacing": 0
+      },
+      "balance": {
+        "fontSize": 34,
+        "lineHeight": 40,
+        "fontWeight": 700,
+        "letterSpacing": -1
+      },
+      "monospace": {
+        "fontSize": 12,
+        "lineHeight": 18,
+        "fontWeight": 400,
+        "letterSpacing": 0
+      },
+      "chatBody": {
+        "fontSize": 14,
+        "lineHeight": 20,
+        "fontWeight": 400,
+        "letterSpacing": 0
+      },
+      "chatTimestamp": {
+        "fontSize": 10,
+        "lineHeight": 14,
+        "fontWeight": 400,
+        "letterSpacing": 0
+      }
+    }
+  },
+  "radius": {
+    "button": 9,
+    "field": 9,
+    "card": 12,
+    "bubble": 11,
+    "bubbleGroupedCorner": 4,
+    "chip": 20,
+    "dialog": 17,
+    "sheetTop": 21,
+    "avatar": "50%",
+    "storyCover": 12,
+    "railItem": 12,
+    "composer": 24
+  },
+  "border": {
+    "hairline": 1,
+    "selected": 1.5,
+    "focusRing": 3,
+    "focusOffset": 3
+  },
+  "shadow": {
+    "light": {
+      "subtle": "0 1px 2px #12302609",
+      "floating": "0 3px 10px #07573B22",
+      "overlay": "0 12px 40px #001B1426"
+    },
+    "dark": {
+      "subtle": "0 1px 2px #00000022",
+      "floating": "0 3px 10px #00000044",
+      "overlay": "0 12px 40px #00000066"
+    }
+  },
+  "size": {
+    "icon": 20,
+    "iconSmall": 16,
+    "iconLarge": 24,
+    "iconTouchTarget": 44,
+    "buttonHeight": 44,
+    "fieldHeight": 48,
+    "appBarHeight": 56,
+    "appBarSubtitleHeight": 72,
+    "chatHeaderHeight": 58,
+    "bottomNavigationHeight": 64,
+    "railWidth": 76,
+    "railItem": 44,
+    "listPaneWidth": 336,
+    "contextPaneWidth": 320,
+    "avatarSmall": 32,
+    "avatarRow": 44,
+    "avatarLarge": 88,
+    "cameraBadge": 28,
+    "cameraBadgeTouch": 44,
+    "composerAction": 44,
+    "composerMinHeight": 48,
+    "composerMaxHeight": 144,
+    "conversationRowMinHeight": 76,
+    "settingsRowMinHeight": 64,
+    "storyCardMediaRatio": "4:5",
+    "storyViewerMediaRatio": "9:16",
+    "storyViewerMaxWidth": 420,
+    "formMaxWidth": 640,
+    "contentMaxWidth": 1200,
+    "sheetMaxWidth": 480,
+    "attachmentSheetMaxWidth": 640,
+    "dialogMaxWidth": 420,
+    "messageMaxWidthPx": 520,
+    "messageMaxWidthFraction": 0.65,
+    "bubblePaddingHorizontal": 12,
+    "bubblePaddingVertical": 8,
+    "bubbleGroupGap": 4,
+    "bubbleSenderGap": 12,
+    "bubbleRowGap": 8,
+    "thumbHeight": 72,
+    "focusOutline": 3,
+    "railBrandMark": 32,
+    "toggleVisualWidth": 40,
+    "toggleVisualHeight": 24,
+    "toggleThumb": 18,
+    "toggleTouch": 44,
+    "filterChipHeight": 34,
+    "badgeMinHeight": 22,
+    "phonePrefixWidth": 104,
+    "sheetHandleWidth": 35,
+    "sheetHandleHeight": 4,
+    "composerInputMinHeight": 44,
+    "composerInputMaxHeight": 120,
+    "composerInputPaddingVertical": 12,
+    "composerPillMinHeight": 48,
+    "composerPillMaxHeight": 124,
+    "composerPillPaddingVertical": 1,
+    "composerPillBorder": 1,
+    "composerOuterMinHeight": 68,
+    "composerOuterMaxHeight": 144,
+    "composerOuterPaddingTop": 8,
+    "composerOuterPaddingBottom": 12,
+    "composerOuterPaddingInline": 12,
+    "messageMaxWidthFractionCompact": 0.82
+  },
+  "layout": {
+    "breakpoints": {
+      "compact": {
+        "min": 0,
+        "maxExclusive": 600
+      },
+      "medium": {
+        "min": 600,
+        "maxExclusive": 1024
+      },
+      "expanded": {
+        "min": 1024,
+        "maxExclusive": 1440
+      },
+      "wide": {
+        "min": 1440,
+        "maxExclusive": null
+      }
+    },
+    "gutter": {
+      "compact": 20,
+      "medium": 24,
+      "expanded": 32,
+      "wide": 32
+    },
+    "gridGap": 16,
+    "listGap": 0,
+    "chatGutter": 16,
+    "compactNavigation": "bottomNavigation",
+    "mediumNavigation": "rail",
+    "expandedNavigation": "rail",
+    "wideNavigation": "rail",
+    "splitMinWidth": 1024,
+    "contextPaneMinWidth": 1440,
+    "contentPaneMinWidth": 320,
+    "gridCardMinWidth": 220,
+    "gridColumns": {
+      "compact": 2,
+      "medium": 2,
+      "expanded": 3,
+      "wide": 4
+    },
+    "paneDividerWidth": 1,
+    "overlayInset": 24,
+    "safeArea": "Use actual device/viewport insets. Never draw prototype phone chrome in native Flutter.",
+    "gridCardMinWidthCompact": 120
+  },
+  "motion": {
+    "fast": 120,
+    "normal": 180,
+    "slow": 240,
+    "toastDuration": 3100,
+    "curve": "ease-out",
+    "flutterCurve": "Curves.easeOut",
+    "reducedMotion": "Remove nonessential animation and use immediate opacity/state transitions; skeleton remains static."
+  },
+  "opacity": {
+    "disabled": 0.45,
+    "scrim": 0.4,
+    "pressed": 0.12,
+    "hover": 0.06
+  },
+  "zIndex": {
+    "base": 0,
+    "stickyHeader": 6,
+    "navigation": 10,
+    "floating": 15,
+    "overlay": 30,
+    "toast": 40,
+    "reviewTools": 100
+  },
+  "responsiveRules": {
+    "messageBubble": "Compact: max-width min(82% of usable conversation width,520px). Medium/expanded/wide: min(65%,520px). Honor text scale and wrap without clipping.",
+    "form": "width: min(availableWidth - 2*gutter, 640px); centered within active content pane.",
+    "discover": "Use2 compact columns with minimum120px cards. Medium+ minimum220px where fits;2medium/3expanded/4wide before reducing column count for actual available width.",
+    "story": "Constrain media to aspect 9:16, maximum width420, maximum available height; letterbox rather than distort.",
+    "overlay": "Phone sheets span client width and attach to bottom; medium+ center sheets up to480; attachment sheet up to640; dialogs up to420.",
+    "context": "Optional 320px context pane only at >=1440; smaller widths open same destination as a route.",
+    "composer": "Input border box44\u2013120px at14/20 with12px vertical padding. Pill48\u2013124px includes1px padding+1px border per side. Outer top8/bottom12 gives68\u2013144px excluding reply/emoji/host inset. Generic composerMinHeight48 is pill; composerMaxHeight144 is total outer."
+  },
+  "accessibility": {
+    "minTouchTarget": 44,
+    "focusRing": 3,
+    "normalTextContrastTarget": 4.5,
+    "largeTextContrastTarget": 3,
+    "nonTextContrastTarget": 3,
+    "textScale": "Honor system text scaling. Height tokens are minimums except layout rail width; rows/forms grow.",
+    "keyboard": "Tab/Shift+Tab, Enter/Space activation; Escape closes topmost overlay; focus returns to invoker.",
+    "semantics": "Every icon-only control has a semantic label; selected navigation uses selected state; live feedback uses polite announcement.",
+    "colorOnly": "Selected/error/status always paired with text, icon, shape or semantics."
+  },
+  "refinementsFromMobileSource": [
+    {
+      "source": "color.light.muted #728179",
+      "contract": "color.light.text.secondary #5D6F65",
+      "reason": "Small readable secondary text uses improved contrast. Original #728179 retained as decorationMuted."
+    },
+    {
+      "source": "Mixed legacy 40/43/44px controls",
+      "contract": "44px minimum touch controls; 48px form fields",
+      "reason": "One reusable component contract across mobile and desktop."
+    },
+    {
+      "source": "Phone-only catalog/inspector wrapper",
+      "contract": "Responsive product shell plus review-only tools",
+      "reason": "Catalog and inspector are developer review surfaces, not app navigation."
+    }
+  ],
+  "webCapabilities": {
+    "calls": false,
+    "videoCompression": false,
+    "callHistory": true,
+    "prototypeCallReview": "Mock call screens remain accessible through review tools only."
+  }
+}

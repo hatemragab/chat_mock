@@ -1,0 +1,35 @@
+[
+  {
+    "test": "design-system theme/inspector/international phone",
+    "pass": true
+  },
+  {
+    "test": "Profile avatar flow and full international phone paste/save",
+    "pass": true,
+    "details": "Country prefix changed to +20, profile saved without duplication; avatar below header."
+  },
+  {
+    "test": "Draft survives phone\u2192wide resize and theme switch",
+    "pass": true
+  },
+  {
+    "test": "Handoff viewer search, per-surface specification, and prototype deep link",
+    "pass": true
+  },
+  {
+    "test": "Scenario search and contextual review link",
+    "pass": true
+  },
+  {
+    "test": "Browser Back restores conversation and draft",
+    "pass": true
+  },
+  {
+    "test": "Composer keeps focus, emoji inserts at caret, and send produces one message",
+    "pass": true
+  },
+  {
+    "test": "Own-message edit updates in place and delete-for-everyone retains a deletion marker",
+    "pass": true
+  }
+]

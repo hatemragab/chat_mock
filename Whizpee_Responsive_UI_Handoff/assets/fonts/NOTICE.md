@@ -1,0 +1,1 @@
+Roboto Latin 400, 500, 700. Copyright 2011 Google Inc. All Rights Reserved. Licensed under Apache License 2.0. Converted losslessly from bundled WOFF resources to TTF with fontTools. No font outline or metric edits. Family name in Flutter: Roboto; HTML alias: Whizpee Roboto.

@@ -1,0 +1,67 @@
+{
+  "kind": "isolated-runtime",
+  "source": "assembled prototype first executable script",
+  "tests": [
+    {
+      "name": "All 80 pages, 21 sheets, 23 dialogs registered",
+      "pass": true
+    },
+    {
+      "name": "All registered page renderers return HTML without exceptions",
+      "pass": true
+    },
+    {
+      "name": "All overlay renderers return structured content",
+      "pass": true
+    },
+    {
+      "name": "All130 named scenario fixture target renderers execute without exceptions",
+      "pass": true
+    },
+    {
+      "name": "Every seeded rendered action, page route and overlay points to a registered target",
+      "pass": true
+    },
+    {
+      "name": "Payment confirmation credits once for stable provider reference",
+      "pass": true
+    },
+    {
+      "name": "Business call ringing then cancelled charges zero",
+      "pass": true
+    },
+    {
+      "name": "Answered paid audio call charges first block once; repeated End is safe",
+      "pass": true
+    },
+    {
+      "name": "Active Business room opening does not charge twice",
+      "pass": true
+    },
+    {
+      "name": "Scenario V077 configures advertisement total as 155 Credits",
+      "pass": true
+    },
+    {
+      "name": "Paid-category video advertisement review totals 155 Credits",
+      "pass": true
+    },
+    {
+      "name": "Business room state stays separated by originating Story",
+      "pass": true
+    },
+    {
+      "name": "Paid call stops at paid block boundary with insufficient next-block balance",
+      "pass": true
+    },
+    {
+      "name": "Diamond conversion debits available only and credits Cash once",
+      "pass": true
+    },
+    {
+      "name": "Withdrawal reserve and failure recredit happen once, including reopened request",
+      "pass": true
+    }
+  ],
+  "consoleMessages": []
+}
